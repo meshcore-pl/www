@@ -21,6 +21,7 @@ const loadDiscordStats = async () => {
 	const wrapper = document.getElementById('discord-stats');
 	const membersEl = document.getElementById('stat-members');
 	const onlineEl = document.getElementById('stat-online');
+	if (!wrapper || !membersEl || !onlineEl) return;
 
 	animateCount(membersEl, body.data.memberCount);
 
