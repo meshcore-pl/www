@@ -6,30 +6,42 @@
 <main>
 	<section class="hero">
 		<div class="hero__inner">
-			<img src="/meshcore/logo-3.png" alt="MeshCore Polska" width="160" height="160" class="hero__logo">
-			<h1>Ogólnopolska społeczność <span>MeshCore</span></h1>
-			<p class="hero__lead">Budujemy w Polsce sieć komunikacji mesh, która działa bez internetu i bez zasięgu GSM. Wpadnij na Discorda i buduj ją z nami!</p>
-			<div class="hero__actions">
-				<a href="/discord" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Dołącz na Discorda</a>
-				<a href="mailto:contact@sefinek.net" class="btn btn--secondary btn--lg">contact@sefinek.net</a>
+			<div class="hero__copy">
+				<p class="eyebrow">869.618 MHz &middot; 62.5 kHz &middot; SF8 &middot; CR8</p>
+				<h1>Ogólnopolska społeczność <span>MeshCore</span></h1>
+				<p class="hero__lead">Budujemy w Polsce sieć komunikacji mesh, która działa bez internetu i bez zasięgu GSM. Wpadnij na Discorda i buduj ją z nami!</p>
+				<div class="hero__actions">
+					<a href="/discord" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Dołącz na Discorda</a>
+					<a href="mailto:contact@sefinek.net" class="btn btn--secondary btn--lg">contact@sefinek.net</a>
+				</div>
+				<div class="hero__stats" id="discord-stats" hidden>
+					<span class="stat"><strong id="stat-members">–</strong> członków</span>
+					<span class="stat stat--online"><strong id="stat-online">–</strong> online</span>
+				</div>
 			</div>
-			<div class="hero__stats" id="discord-stats" hidden>
-				<span class="stat"><strong id="stat-members">–</strong> członków</span>
-				<span class="stat stat--online"><strong id="stat-online">–</strong> online</span>
+			<div class="hero__map" aria-hidden="true">
+				<canvas id="mesh-map"></canvas>
+				<p class="hero__map-caption">Węzły i pakiety w sieci mesh &middot; wizualizacja</p>
 			</div>
 		</div>
 	</section>
 
 	<section class="section" aria-labelledby="czym-to-heading">
 		<div class="section__inner">
-			<h2 id="czym-to-heading">Czym jest MeshCore?</h2>
-			<p>MeshCore to otwarty projekt sieci mesh oparty o radio LoRa, pozwalający przesyłać wiadomości między urządzeniami bez pomocy internetu czy operatora komórkowego. Sprawdza się w terenie, w górach, na eventach i w sytuacjach awaryjnych, gdzie tradycyjna łączność zawodzi.</p>
+			<div class="section__head">
+				<p class="eyebrow">Protokół</p>
+				<h2 id="czym-to-heading">Czym jest MeshCore?</h2>
+			</div>
+			<p class="section__lead">MeshCore to otwarty projekt sieci mesh oparty o radio LoRa, pozwalający przesyłać wiadomości między urządzeniami bez pomocy internetu czy operatora komórkowego. Sprawdza się w terenie, w górach, na eventach i w sytuacjach awaryjnych, gdzie tradycyjna łączność zawodzi.</p>
 		</div>
 	</section>
 
 	<section class="section section--alt" aria-labelledby="dlaczego-heading">
 		<div class="section__inner">
-			<h2 id="dlaczego-heading">Dlaczego MeshCore Polska?</h2>
+			<div class="section__head">
+				<p class="eyebrow">Społeczność</p>
+				<h2 id="dlaczego-heading">Dlaczego MeshCore Polska?</h2>
+			</div>
 			<div class="cards">
 				<div class="card">
 					<h3>Zasięg ogólnopolski</h3>
@@ -61,13 +73,16 @@
 
 	<section class="section" aria-labelledby="jak-heading">
 		<div class="section__inner">
-			<h2 id="jak-heading">Co wyróżnia nas?</h2>
+			<div class="section__head">
+				<p class="eyebrow">Serwer</p>
+				<h2 id="jak-heading">Co wyróżnia nas?</h2>
+			</div>
 			<ul class="steps">
-				<li><span class="steps__num">✓</span> Konfigurator profili: każdy użytkownik ma swój profil na stronie.</li>
-				<li><span class="steps__num">✓</span> Estetyczny, dopracowany wygląd serwera.</li>
-				<li><span class="steps__num">✓</span> Liberalne podejście: zdrowy rozsądek zamiast sztywnego regulaminu.</li>
-				<li><span class="steps__num">✓</span> Powiadomienia o aktualizacjach firmware i aplikacji.</li>
-				<li><span class="steps__num">✓</span> Największa i najaktywniejsza społeczność MeshCore w Polsce.</li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg> Konfigurator profili: każdy użytkownik ma swój profil na stronie.</li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg> Estetyczny, dopracowany wygląd serwera.</li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg> Liberalne podejście: zdrowy rozsądek zamiast sztywnego regulaminu.</li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg> Powiadomienia o aktualizacjach firmware i aplikacji.</li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg> Największa i najaktywniejsza społeczność MeshCore w Polsce.</li>
 			</ul>
 		</div>
 	</section>
@@ -75,6 +90,7 @@
 	<section class="section" aria-labelledby="wplyw-heading">
 		<div class="section__inner">
 			<div class="callout">
+				<p class="eyebrow">Tłumaczenia</p>
 				<h2 id="wplyw-heading">Realny wpływ</h2>
 				<p>Zajmujemy się także oficjalnym tłumaczeniem aplikacji MeshCore na język polski. Masz uwagi albo propozycje do tłumaczeń? Napisz śmiało na naszym Discordzie.</p>
 				<p class="callout__note">Dostęp do tłumaczenia aplikacji ma wyłącznie Sefinek.</p>
@@ -84,8 +100,9 @@
 
 	<section class="cta">
 		<div class="cta__inner">
+			<p class="eyebrow">Dołącz do sieci</p>
 			<h2>Dołącz do MeshCore Polska</h2>
-			<p>Im więcej węzłów, tym dalej sięga sieć. Twój może być następny.</p>
+			<p>Im więcej węzłów, tym dalej sięga sieć. Twój może być następny (;</p>
 			<a href="/discord" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Dołącz już teraz</a>
 		</div>
 	</section>

@@ -1,12 +1,22 @@
 <footer class="footer">
 	<div class="footer__inner">
-		<div class="footer__brand">
-			<img src="/meshcore/logo-2.png" alt="MeshCore Polska" width="36" height="36">
-			<span>MeshCore Polska</span>
+		<div class="footer__top">
+			<div class="footer__brand">
+				<img src="/meshcore/logo-2.png" alt="MeshCore Polska" width="36" height="36">
+				<span>MeshCore <strong>Polska</strong></span>
+			</div>
+			<nav class="footer__links" aria-label="Stopka">
+				<a href="/discord" target="_blank" rel="noopener">Discord</a>
+				<a href="mailto:contact@sefinek.net">contact@sefinek.net</a>
+			</nav>
 		</div>
-		<p class="footer__copy">Copyright <%= new Date().getFullYear() %> &copy; by <a href="https://sefinek.net" target="_blank" rel="noopener">Sefinek</a>. Wszelkie prawa zastrzeżone.</p>
+		<div class="footer__bottom">
+			<p class="footer__copy">Copyright <%= new Date().getFullYear() %> &copy; by <a href="https://sefinek.net" target="_blank" rel="noopener">Sefinek</a>. Wszelkie prawa zastrzeżone.</p>
+			<p class="footer__meta">869.618 MHz &middot; 62.5 kHz &middot; SF8 &middot; CR8</p>
+		</div>
 	</div>
 </footer>
 <script src="/js/main.js" defer></script>
+<script src="/js/mesh-map.js" defer></script>
 </body>
 </html>

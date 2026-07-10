@@ -34,3 +34,8 @@ const loadDiscordStats = async () => {
 };
 
 void loadDiscordStats();
+
+const nav = document.querySelector('.nav');
+const updateNav = () => nav.classList.toggle('nav--scrolled', window.scrollY > 10);
+updateNav();
+window.addEventListener('scroll', updateNav, { passive: true });

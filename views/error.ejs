@@ -3,7 +3,9 @@
 <main>
 	<section class="section section--notfound">
 		<div class="section__inner">
-			<h1><%= status %>: <%= message %></h1>
+			<p class="eyebrow">Błąd transmisji</p>
+			<h1 class="errorpage__code"><%= status %></h1>
+			<p class="errorpage__msg"><%= message %></p>
 			<div class="hero__actions">
 				<a href="/" class="btn btn--secondary">Strona główna</a>
 				<a href="/discord" class="btn btn--primary" target="_blank" rel="noopener">Dołącz na Discorda</a>
