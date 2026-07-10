@@ -1,8 +1,8 @@
 const siteUrl = process.env.SITE_URL.replace(/\/+$/, '');
 
 const MESSAGES = {
-	404: 'Nie znaleziono strony. Wróć na stronę główną albo dołącz od razu na Discord.',
-	429: 'Zbyt wiele żądań. Spróbuj ponownie za chwilę.',
+	404: 'Nie znaleziono strony. Wróć na stronę główną.',
+	429: 'Ups. Zbyt wiele żądań. Spróbuj ponownie za chwilę.',
 	500: 'Wystąpił nieoczekiwany błąd serwera. Spróbuj ponownie za chwilę.',
 	503: 'Serwer jest chwilowo niedostępny. Spróbuj ponownie za chwilę.',
 };
