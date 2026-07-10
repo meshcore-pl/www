@@ -66,7 +66,16 @@ img {
 }
 
 a {
-	color: inherit;
+	color: #58a6ff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: none;
 }
 
 a:focus-visible,
@@ -126,16 +135,21 @@ p {
 	white-space: nowrap;
 }
 
+.btn:hover,
+.btn:active {
+	text-decoration: none;
+}
+
 .btn--primary {
 	background: linear-gradient(160deg, var(--red-bright), var(--red-dark));
 	color: #fff;
-	box-shadow: 0 4px 24px var(--red-glow), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+	box-shadow: 0 0 24px var(--red-glow), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .btn--primary:hover {
 	filter: brightness(1.12);
-	transform: translateY(-2px);
-	box-shadow: 0 8px 34px var(--red-glow), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+	transform: scale(1.045);
+	box-shadow: 0 0 34px var(--red-glow), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .btn--secondary {
@@ -147,12 +161,12 @@ p {
 .btn--secondary:hover {
 	border-color: var(--red-bright);
 	background: rgba(224, 18, 48, 0.08);
-	transform: translateY(-2px);
+	transform: scale(1.045);
 }
 
 .btn--primary:active,
 .btn--secondary:active {
-	transform: translateY(0) scale(0.97);
+	transform: scale(0.97);
 	transition-duration: 0.06s;
 }
 
@@ -199,8 +213,13 @@ p {
 	font-style: italic;
 	text-transform: uppercase;
 	letter-spacing: -0.01em;
+	color: var(--text);
 	text-decoration: none;
 	font-size: 1rem;
+}
+
+.nav__brand:hover {
+	text-decoration: none;
 }
 
 .nav__brand strong {
@@ -210,6 +229,30 @@ p {
 
 .nav__logo {
 	border-radius: 15%;
+}
+
+.nav__right {
+	display: flex;
+	align-items: center;
+	gap: 1.4rem;
+}
+
+.nav__link {
+	font-size: 0.92rem;
+	color: var(--text-muted);
+	text-decoration: none;
+	transition: color 0.15s ease;
+}
+
+.nav__link:hover {
+	color: var(--red-bright);
+	text-decoration: none;
+}
+
+@media (max-width: 840px) {
+	.nav__link {
+		display: none;
+	}
 }
 
 .hero {
@@ -371,6 +414,46 @@ p {
 	font-size: 1.05rem;
 }
 
+.about {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	align-items: center;
+	gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.about h2 {
+	margin-bottom: 0.55em;
+}
+
+.about__copy p {
+	font-size: 1.05rem;
+	margin: 0;
+}
+
+.about__photo {
+	margin: 0;
+}
+
+.about__photo img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 3 / 2;
+	object-fit: cover;
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	box-shadow: 0 0 48px rgba(0, 0, 0, 0.4);
+	display: block;
+}
+
+.about__caption {
+	margin: 0.9rem 0 0;
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	letter-spacing: 0.03em;
+	line-height: 1.7;
+	color: rgba(153, 161, 181, 0.75);
+}
+
 .cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -421,7 +504,7 @@ p {
 	list-style: none;
 	margin: 0 auto;
 	padding: 0;
-	max-width: 640px;
+	max-width: 730px;
 	display: flex;
 	flex-direction: column;
 	gap: 0.9rem;
@@ -448,6 +531,95 @@ p {
 	background: rgba(61, 220, 132, 0.08);
 	border: 1px solid rgba(61, 220, 132, 0.35);
 	border-radius: 8px;
+}
+
+.profile {
+	display: grid;
+	grid-template-columns: 0.85fr 1.15fr;
+	align-items: center;
+	gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.profile h2 {
+	margin-bottom: 0.55em;
+}
+
+.profile__copy p {
+	font-size: 1.02rem;
+}
+
+.profile__copy code {
+	font-family: var(--font-mono);
+	font-size: 0.88em;
+	color: var(--red-bright);
+	background: rgba(224, 18, 48, 0.08);
+	border: 1px solid rgba(224, 18, 48, 0.25);
+	border-radius: 6px;
+	padding: 0.1em 0.45em;
+	white-space: nowrap;
+}
+
+.profile__list {
+	list-style: none;
+	margin: 1.5rem 0 0;
+	padding: 0;
+	display: grid;
+	gap: 0.65rem;
+	color: var(--text);
+}
+
+.profile__list li::before {
+	content: '> ';
+	font-family: var(--font-mono);
+	font-weight: 600;
+	color: var(--red-bright);
+}
+
+.profile__shots img {
+	width: 100%;
+	height: auto;
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	display: block;
+}
+
+.profile__main {
+	display: block;
+	border-radius: var(--radius);
+	box-shadow: 0 0 48px rgba(0, 0, 0, 0.45);
+	transition: transform 0.2s ease;
+}
+
+.profile__main:hover {
+	transform: translateY(-3px);
+}
+
+.profile__thumbs {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.9rem;
+	margin-top: 0.9rem;
+}
+
+.profile__thumbs a {
+	display: block;
+	border-radius: var(--radius);
+	opacity: 0.82;
+	transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.profile__thumbs a:hover {
+	opacity: 1;
+	transform: translateY(-2px);
+}
+
+.profile__caption {
+	margin: 0.9rem 0 0;
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: rgba(153, 161, 181, 0.7);
 }
 
 .callout {
@@ -484,12 +656,13 @@ p {
 .cta {
 	position: relative;
 	overflow: hidden;
-	padding: 5.5rem 1.5rem;
+	padding: 7.5rem 1.5rem;
 	text-align: center;
 	background:
-		radial-gradient(ellipse 60% 70% at 50% 125%, var(--red-glow), transparent 65%),
+		radial-gradient(ellipse 60% 70% at 50% 125%, rgba(224, 18, 48, 0.18), transparent 65%),
+		linear-gradient(180deg, var(--bg) 0%, rgba(10, 12, 17, 0.82) 26%, rgba(10, 12, 17, 0.8) 100%),
+		url('/images/walcz-drone.jpg') center / cover no-repeat fixed,
 		var(--bg-alt);
-	border-top: 1px solid var(--border);
 }
 
 .cta__inner {
@@ -505,6 +678,23 @@ p {
 .cta p {
 	margin-bottom: 1.9rem;
 	font-size: 1.08rem;
+	color: #c3cadb;
+}
+
+.cta p.cta__credit {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	margin: 0;
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	color: rgba(153, 161, 181, 0.55);
+	background: rgba(10, 12, 17, 0.5);
+	border: 1px solid rgba(148, 166, 204, 0.08);
+	border-radius: 6px;
+	padding: 4px 10px;
 }
 
 .section--notfound {
@@ -533,12 +723,25 @@ p {
 }
 
 .footer {
+	position: relative;
+	overflow: hidden;
 	background: var(--bg-alt);
-	border-top: 1px solid var(--border);
+	border-top: 1px solid rgba(238, 241, 248, 0.08);
 	padding: 3rem 1.5rem 2rem;
 }
 
+.footer::before {
+	content: '';
+	position: absolute;
+	inset: -20px;
+	background:
+		linear-gradient(180deg, rgba(14, 17, 24, 0.8), rgba(14, 17, 24, 0.9)),
+		url('/images/walcz-drone.jpg') center 78% / cover no-repeat;
+	filter: blur(6px) saturate(0.9);
+}
+
 .footer__inner {
+	position: relative;
 	max-width: var(--container);
 	margin: 0 auto;
 }
@@ -585,6 +788,7 @@ p {
 
 .footer__links a:hover {
 	color: var(--red-bright);
+	text-decoration: none;
 }
 
 .footer__bottom {
@@ -640,6 +844,19 @@ p {
 
 	.hero__map-caption {
 		white-space: nowrap;
+	}
+
+	.about,
+	.profile {
+		grid-template-columns: 1fr;
+	}
+
+	.cta {
+		background:
+			radial-gradient(ellipse 60% 70% at 50% 125%, rgba(224, 18, 48, 0.18), transparent 65%),
+			linear-gradient(180deg, var(--bg) 0%, rgba(10, 12, 17, 0.82) 26%, rgba(10, 12, 17, 0.86) 100%),
+			url('/images/walcz-drone.jpg') center 62% / cover no-repeat,
+			var(--bg-alt);
 	}
 }
 
