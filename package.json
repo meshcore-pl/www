@@ -1,6 +1,7 @@
 {
   "name": "meshcorepolska",
   "version": "1.0.0",
+  "private": true,
   "homepage": "https://github.com/meshcore-pl/www#readme",
   "bugs": {
     "url": "https://github.com/meshcore-pl/www/issues"
@@ -9,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/meshcore-pl/www.git"
   },
-  "license": "UNLICENSED",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
   "type": "commonjs",
   "main": "index.js",
