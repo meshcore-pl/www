@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') app.use(limiter);
 app.use(timeout());
 
 app.use('/', PagesRouter);
-app.use('/api', APIRouter);
+app.use('/api/v1', APIRouter);
 
 
 // Error handling

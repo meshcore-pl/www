@@ -1,15 +1,11 @@
 const CACHE_TTL_MS = 60 * 1000;
 const INVITE_API_URL = `https://discord.com/api/v10/invites/${process.env.DISCORD_INVITE_CODE}?with_counts=true`;
 
-let cache = null;
-let cacheExpiresAt = 0;
+let cache = null, cacheExpiresAt = 0;
 
-async function getDiscordStats() {
+module.exports = async () => {
 	const now = Date.now();
-
-	if (cache && now < cacheExpiresAt) {
-		return cache;
-	}
+	if (cache && now < cacheExpiresAt) return cache;
 
 	const res = await fetch(INVITE_API_URL, {
 		headers: { Accept: 'application/json' },
@@ -29,6 +25,4 @@ async function getDiscordStats() {
 	cacheExpiresAt = now + CACHE_TTL_MS;
 
 	return cache;
-}
-
-module.exports = { getDiscordStats };
+};

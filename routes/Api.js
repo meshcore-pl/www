@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getDiscordStats } = require('../services/discordInvite');
+const getDiscordStats = require('../services/discordInvite.js');
 
 router.get('/discord-stats', async (req, res) => {
 	try {

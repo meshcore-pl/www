@@ -12,7 +12,7 @@ const animateCount = (el, target) => {
 };
 
 const loadDiscordStats = async () => {
-	const res = await fetch('/api/discord-stats').catch(() => null);
+	const res = await fetch('/api/v1/discord-stats').catch(() => null);
 	if (!res) return;
 
 	const body = await res.json().catch(() => null);

@@ -339,7 +339,6 @@ p {
 		radial-gradient(circle at 50% 120%, var(--red-glow), transparent 60%),
 		var(--bg-alt);
 	border-top: 1px solid var(--border);
-	border-bottom: 1px solid var(--border);
 }
 
 .cta__inner {
@@ -413,10 +412,6 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
-
 	.btn {
 		transition: none;
 	}
