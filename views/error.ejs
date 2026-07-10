@@ -1,0 +1,15 @@
+<%- include('./includes/header.ejs') %>
+
+<main>
+	<section class="section section--notfound">
+		<div class="section__inner">
+			<h1><%= status %>: <%= message %></h1>
+			<div class="hero__actions">
+				<a href="/" class="btn btn--secondary">Strona główna</a>
+				<a href="<%= discordInviteUrl %>" class="btn btn--primary" target="_blank" rel="noopener">Dołącz na Discorda</a>
+			</div>
+		</div>
+	</section>
+</main>
+
+<%- include('./includes/footer.ejs') %>

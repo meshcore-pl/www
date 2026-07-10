@@ -1,0 +1,37 @@
+{
+  "name": "meshcorepolska",
+  "version": "1.0.0",
+  "homepage": "https://github.com/meshcore-pl/www#readme",
+  "bugs": {
+    "url": "https://github.com/meshcore-pl/www/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meshcore-pl/www.git"
+  },
+  "license": "UNLICENSED",
+  "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "m": "ncu -u && npm install && npm update",
+    "pull": "git pull origin main",
+    "test": "jest",
+    "update": "npm run pull && npm ci --omit=dev && pm2 restart mcpl"
+  },
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "express-timeout-handler": "^2.2.2",
+    "helmet": "^8.2.0",
+    "morgan": "^1.11.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "globals": "^17.7.0"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  }
+}

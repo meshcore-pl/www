@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><%= title %></title>
+	<meta name="description" content="<%= description %>">
+	<meta name="robots" content="<%= locals.noindex ? 'noindex, nofollow' : 'index, follow' %>">
+	<% if (!locals.noindex) { %><link rel="canonical" href="<%= canonicalUrl %>"><% } %>
+
+	<link rel="icon" type="image/png" href="/meshcore/logo-3.png">
+	<link rel="apple-touch-icon" href="/meshcore/logo-3.png">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="MeshCore Polska">
+	<meta property="og:locale" content="pl_PL">
+	<meta property="og:title" content="<%= title %>">
+	<meta property="og:description" content="<%= description %>">
+	<meta property="og:url" content="<%= canonicalUrl %>">
+	<meta property="og:image" content="<%= siteUrl %>/meshcore/banner-2.png">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="<%= title %>">
+	<meta name="twitter:description" content="<%= description %>">
+	<meta name="twitter:image" content="<%= siteUrl %>/meshcore/banner-2.png">
+
+	<link rel="stylesheet" href="/css/style.css">
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"name": "MeshCore Polska",
+				"url": "<%= siteUrl %>/",
+				"logo": "<%= siteUrl %>/meshcore/logo-3.png",
+				"sameAs": ["<%= discordInviteUrl %>"]
+			},
+			{
+				"@type": "WebSite",
+				"name": "MeshCore Polska",
+				"url": "<%= siteUrl %>/",
+				"inLanguage": "pl-PL"
+			}
+		]
+	}
+	</script>
+</head>
+<body>
+<header class="nav">
+	<div class="nav__inner">
+		<a href="/" class="nav__brand">
+			<img src="/meshcore/logo-3.png" alt="MeshCore Polska" width="40" height="40" class="nav__logo">
+			<span>MeshCore <strong>Polska</strong></span>
+		</a>
+		<a href="<%= discordInviteUrl %>" class="btn btn--primary btn--sm" target="_blank" rel="noopener">Dołącz</a>
+	</div>
+</header>
