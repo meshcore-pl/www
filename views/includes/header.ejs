@@ -10,8 +10,8 @@
 
 	<meta name="theme-color" content="#0a0c11">
 
-	<link rel="icon" type="image/png" href="/meshcore/logo-3.png">
-	<link rel="apple-touch-icon" href="/meshcore/logo-3.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/meshcore/logo-3-192.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/meshcore/logo-3-180.png">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,12 +23,16 @@
 	<meta property="og:title" content="<%= title %>">
 	<meta property="og:description" content="<%= description %>">
 	<meta property="og:url" content="<%= canonicalUrl %>">
-	<meta property="og:image" content="<%= siteUrl %>/meshcore/banner-2.png">
+	<meta property="og:image" content="<%= siteUrl %>/meshcore/banner-og.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="675">
+	<meta property="og:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="<%= title %>">
 	<meta name="twitter:description" content="<%= description %>">
-	<meta name="twitter:image" content="<%= siteUrl %>/meshcore/banner-2.png">
+	<meta name="twitter:image" content="<%= siteUrl %>/meshcore/banner-og.jpg">
+	<meta name="twitter:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
 
 	<link rel="stylesheet" href="/css/style.css">
 
@@ -40,8 +44,9 @@
 				"@type": "Organization",
 				"name": "MeshCore Polska",
 				"url": "<%= siteUrl %>/",
-				"logo": "<%= siteUrl %>/meshcore/logo-3.png",
-				"sameAs": ["<%= siteUrl %>/discord"]
+				"logo": "<%= siteUrl %>/meshcore/logo-3-192.png",
+				"email": "contact@sefinek.net",
+				"sameAs": ["<%= siteUrl %>/discord", "https://github.com/meshcore-pl"]
 			},
 			{
 				"@type": "WebSite",
@@ -57,7 +62,7 @@
 <header class="nav">
 	<div class="nav__inner">
 		<a href="/" class="nav__brand">
-			<img src="/meshcore/logo-3.png" alt="MeshCore Polska" width="40" height="40" class="nav__logo">
+			<img src="/meshcore/logo-3-80.png" alt="MeshCore Polska" width="40" height="40" class="nav__logo">
 			<span>MeshCore <strong>Polska</strong></span>
 		</a>
 		<div class="nav__right">

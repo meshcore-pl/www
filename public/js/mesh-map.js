@@ -101,8 +101,8 @@
 		for (let i = 0; i < BORDER.length; i++) {
 			const [alon, alat] = BORDER[i];
 			const [blon, blat] = BORDER[(i + 1) % BORDER.length];
-			const ax = alon * COS_LAT, ay = alat, bx = blon * COS_LAT, by = blat;
-			const dx = bx - ax, dy = by - ay;
+			const ax = alon * COS_LAT, ay = alat, bx = blon * COS_LAT;
+			const dx = bx - ax, dy = blat - ay;
 			const l2 = dx * dx + dy * dy;
 			let t = l2 ? ((px - ax) * dx + (py - ay) * dy) / l2 : 0;
 			t = Math.max(0, Math.min(1, t));
