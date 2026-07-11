@@ -2,6 +2,7 @@
   "name": "meshcorepolska",
   "version": "1.0.0",
   "private": true,
+  "description": "Backend oraz frontend strony www meshcorepolska.org",
   "homepage": "https://meshcorepolska.org",
   "bugs": {
     "url": "https://github.com/meshcore-pl/www/issues"
