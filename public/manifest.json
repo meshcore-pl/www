@@ -1,0 +1,22 @@
+{
+	"name": "MeshCore Polska",
+	"short_name": "MeshCore PL",
+	"description": "Ogólnopolska społeczność sieci mesh MeshCore, czyli komunikacji radiowej LoRa działającej bez internetu i GSM.",
+	"lang": "pl",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#0a0c11",
+	"theme_color": "#0a0c11",
+	"icons": [
+		{
+			"src": "/meshcore/logo-3-192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/meshcore/logo-3-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
