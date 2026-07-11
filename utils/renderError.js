@@ -1,4 +1,4 @@
-const siteUrl = process.env.SITE_URL.replace(/\/+$/, '');
+const siteUrl = process.env.DOMAIN.replace(/\/+$/, '');
 
 const MESSAGES = {
 	404: 'Nie znaleziono strony. Wróć na stronę główną.',

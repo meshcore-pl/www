@@ -12,7 +12,7 @@ Strona [meshcorepolska.org](https://meshcorepolska.org), czyli polska społeczno
 node index.js
 ```
 
-Wymaga pliku `.env` (wzór w `.env.example`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `SITE_URL`, `DISCORD_INVITE_CODE`.
+Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `DISCORD_INVITE_CODE`. `DOMAIN` to pełny adres strony z protokołem, używany też w canonicalach i tagach OG.
 
 - Brak kroku budowania. Frontend to czysty CSS i vanilla JS serwowane z `public/`.
 - Brak testów (skrypt `npm test` odwołuje się do jesta, którego nie ma w zależnościach).
