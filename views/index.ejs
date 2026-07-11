@@ -14,9 +14,10 @@
 					<a href="/discord" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Nasz serwer Discord</a>
 					<a href="mailto:contact@sefinek.net" class="btn btn--secondary btn--lg">Kontakt mailowy</a>
 				</div>
-				<div class="hero__stats" id="discord-stats" hidden>
-					<span class="stat"><strong id="stat-members">–</strong> członków</span>
-					<span class="stat stat--online"><strong id="stat-online">–</strong> online</span>
+				<div class="hero__stats">
+					<span class="stat" hidden><strong id="stat-members">–</strong> członków</span>
+					<span class="stat stat--online" hidden><strong id="stat-online">–</strong> online</span>
+					<span class="stat">Witryna: <strong>v<%= version %></strong></span>
 				</div>
 			</div>
 			<div class="hero__map" aria-hidden="true">
@@ -45,7 +46,53 @@
 		</div>
 	</section>
 
-	<section class="section section--alt" aria-labelledby="dlaczego-heading">
+	<section class="section section--alt" aria-labelledby="sprzet-heading">
+		<div class="section__inner">
+			<div class="section__head">
+				<p class="eyebrow">Rekomendowany sprzęt</p>
+				<h2 id="sprzet-heading">Wystarczy Ci to, aby zacząć</h2>
+			</div>
+
+			<p class="section__lead">
+				Do pierwszego kontaktu z siecią wystarczy companion, czyli małe urządzenie LoRa, które łączy się z telefonem przez Bluetooth.
+				Na telefonie potrzebujesz jedynie oficjalnej aplikacji MeshCore. Bez obaw! Przetłumaczyliśmy ją na język polski.
+				Firmware wgrasz przez przeglądarkę. Pamiętaj, aby w aplikacji wybrać preset EU/UK (Narrow).
+			</p>
+
+			<div class="cards">
+				<div class="card">
+					<img class="card__img" src="/images/boards/sensecap_t1000e.svg" alt="SenseCAP Card Tracker T1000-E" loading="lazy">
+					<h3>SenseCAP T1000-E</h3>
+					<p>Typowy gotowiec wielkości karty płatniczej: obudowa, bateria i GPS w zestawie. Idealny, jeśli nie chcesz bawić się w ogniwa i składanie.</p>
+				</div>
+				<div class="card">
+					<img class="card__img" src="/images/boards/heltec_v4.svg" alt="Płytka Heltec V4" loading="lazy">
+					<h3>Heltec V4.3</h3>
+					<p>Tania i łatwo dostępna płytka z ekranem OLED, oparta na układzie ESP32. W sam raz pod pierwszego companiona.</p>
+				</div>
+				<div class="card">
+					<img class="card__img" src="/images/boards/rak_4631.svg" alt="Płytka RAK 4631" loading="lazy">
+					<h3>RAK 4631</h3>
+					<p>Klasyka wśród repeaterów. Bardzo niski pobór prądu ze względu na moduł nRF. Świetnie działa przy zasilaniu off-grid.</p>
+				</div>
+				<div class="card">
+					<h3>Nie wiesz, co wybrać?</h3>
+					<p>Napisz na naszym <a href="/discord" target="_blank" rel="noopener">Discordzie</a>, podpowiemy sprzęt pod Twój budżet i zastosowanie.</p>
+				</div>
+			</div>
+
+			<div class="cards__note">
+				<b>Warto wiedzieć</b>
+				<ul>
+					<li>Kupując sprzęt, zawsze wybieraj wersję 868 MHz. Warianty 915 MHz (pod USA) i 433 MHz będą bezużyteczne w polskiej sieci.</li>
+					<li>Płytki z układem nRF pobierają zauważalnie mniej prądu niż te z ESP32, dlatego lepiej sprawdzają się w urządzeniach zasilanych z baterii i paneli słonecznych. Według nas RAK 4631 jest przy tym zdecydowanie pewniejszym wyborem na repeater niż Xiao.</li>
+					<li>Do repeatera wybierz ogniwa Li-Ion (akumulator litowo-jonowy, np. 18650), ponieważ lepiej znoszą pracę na dworze i setki cykli ładowania. Li-Po (akumulator litowo-polimerowy) zostaw raczej companionom.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="dlaczego-heading">
 		<div class="section__inner">
 			<div class="section__head">
 				<p class="eyebrow">Społeczność</p>
@@ -80,7 +127,7 @@
 		</div>
 	</section>
 
-	<section class="section" aria-labelledby="jak-heading">
+	<section class="section section--alt" aria-labelledby="jak-heading">
 		<div class="section__inner">
 			<div class="section__head">
 				<p class="eyebrow">Serwer</p>
@@ -97,7 +144,7 @@
 		</div>
 	</section>
 
-	<section class="section section--alt" aria-labelledby="profile-heading">
+	<section class="section" aria-labelledby="profile-heading">
 		<div class="section__inner">
 			<div class="profile">
 				<div class="profile__copy">
@@ -128,12 +175,13 @@
 						</a>
 					</div>
 					<p class="profile__caption">Publiczny profil i konfigurator &middot; kliknij, aby powiększyć</p>
+					<p class="profile__caption">Zostaną one niedługo zmigrowane do <a href="https://meshcoreprofiles.com" target="_blank">meshcoreprofiles.com</a>.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="section" aria-labelledby="wplyw-heading">
+	<section class="section section--alt" aria-labelledby="wplyw-heading">
 		<div class="section__inner">
 			<div class="callout">
 				<p class="eyebrow">Tłumaczenia</p>
@@ -144,7 +192,7 @@
 		</div>
 	</section>
 
-	<section class="section section--alt" aria-labelledby="prywatnosc-heading">
+	<section class="section" aria-labelledby="prywatnosc-heading">
 		<div class="section__inner">
 			<div class="section__head">
 				<p class="eyebrow">Prywatność</p>
