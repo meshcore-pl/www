@@ -69,11 +69,16 @@
 		</a>
 
 		<div class="nav__right">
-			<a href="https://www.meshcore.io/" class="nav__link" target="_blank" rel="noopener">MeshCore.io</a>
-			<a href="https://map.meshcore.io/?zoom=7&amp;lat=52.2893&amp;lon=19.1162" class="nav__link" target="_blank" rel="noopener">Mapa węzłów</a>
-			<a href="https://flasher.meshcore.io/" class="nav__link" target="_blank" rel="noopener">Flasher</a>
-			<a href="https://www.dxinfocentre.com/tropo_eur.html" class="nav__link" target="_blank" rel="noopener">Propagacja</a>
+			<nav class="nav__links" id="nav-menu" aria-label="Menu główne">
+				<a href="https://meshcore.io" class="nav__link" target="_blank" rel="noopener">MeshCore.io</a>
+				<a href="https://map.meshcore.io/?zoom=7&amp;lat=52.2893&amp;lon=19.1162" class="nav__link" target="_blank" rel="noopener">Mapa węzłów</a>
+				<a href="https://flasher.meshcore.io/" class="nav__link" target="_blank" rel="noopener">Flasher</a>
+				<a href="https://www.dxinfocentre.com/tropo_eur.html" class="nav__link" target="_blank" rel="noopener">Propagacja</a>
+			</nav>
 			<a href="/discord" class="btn btn--primary btn--sm" target="_blank" rel="noopener">Serwer Discord</a>
+			<button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+			</button>
 		</div>
 	</div>
 </header>

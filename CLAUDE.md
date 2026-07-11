@@ -12,7 +12,7 @@ Strona [meshcorepolska.org](https://meshcorepolska.org), czyli polska społeczno
 node index.js
 ```
 
-Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `DISCORD_INVITE_CODE`. `DOMAIN` to pełny adres strony z protokołem, używany też w canonicalach i tagach OG.
+Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `DISCORD_INVITE_CODE`, `TCPDATA_HOST`, `TCPDATA_PORT`. `DOMAIN` to pełny adres strony z protokołem, używany też w canonicalach i tagach OG. `TCPDATA_*` wskazuje usługę TCP z GeoIP (`services/tcpClient.js`); bez tych zmiennych proces kończy się przy starcie.
 
 - Brak kroku budowania. Frontend to czysty CSS i vanilla JS serwowane z `public/`.
 - Brak testów (skrypt `npm test` odwołuje się do jesta, którego nie ma w zależnościach).
@@ -21,7 +21,9 @@ Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFil
 
 ## Architektura
 
-`index.js` składa całość: helmet (bez CSP), `express.static('public')`, morgan, rate limiter (tylko w produkcji), timeout, potem routery i obsługa błędów.
+`index.js` składa całość: helmet (bez CSP), `express.static('public')`, morgan, rate limiter (tylko w produkcji), timeout, geoblock, potem routery i obsługa błędów.
+
+- `middlewares/geoblock.js`: blokuje ruch z Ukrainy na dwóch sygnałach: język `uk` w `Accept-Language` oraz kraj `UA` z GeoIP (`tcpClient.geoCheck`). Renderuje dedykowaną stronę `views/blocked.ejs` ze statusem 403. Static jest serwowany przed blokadą; przy niedostępności usługi TCP blokada po kraju przepuszcza ruch (fail-open).
 
 - `routes/Pages.js`: strony HTML. `/` renderuje `views/index.ejs`, `/discord` przekierowuje na zaproszenie Discord (celowo `discord.com/invite` zamiast `discord.gg`, żeby uniknąć łańcucha przekierowań).
 - `routes/Api.js`: `/api/v1/discord-stats`, jedyny endpoint API. Dane z `services/discordInvite.js` (invite API Discorda) z 60-sekundowym cache w pamięci procesu, plus `Cache-Control: public, max-age=60` na odpowiedzi. Liczby członków/online są przybliżone (approximate_* z API).

@@ -1,4 +1,5 @@
-<footer class="footer">
+<footer class="footer<%= locals.footerPhoto ? ' footer--photo' : '' %>">
+	<% if (locals.footerPhoto) { %><div class="footer__bg" aria-hidden="true"></div><% } %>
 	<div class="footer__inner">
 		<div class="footer__top">
 			<div class="footer__brand">
@@ -7,7 +8,7 @@
 			</div>
 			<nav class="footer__links" aria-label="Stopka">
 				<a href="/discord" target="_blank" rel="noopener">Discord</a>
-				<a href="https://www.meshcore.io/" target="_blank" rel="noopener">MeshCore.io</a>
+				<a href="https://meshcore.io" target="_blank" rel="noopener">MeshCore.io</a>
 				<a href="https://map.meshcore.io/?zoom=7&amp;lat=52.2893&amp;lon=19.1162" target="_blank" rel="noopener">Mapa węzłów</a>
 				<a href="https://flasher.meshcore.io/" target="_blank" rel="noopener">Flasher</a>
 				<a href="https://github.com/meshcore-pl/www" target="_blank" rel="noopener">Kod źródłowy</a>
@@ -16,7 +17,7 @@
 		</div>
 		<div class="footer__bottom">
 			<p class="footer__copy">Copyright <%= new Date().getFullYear() %> &copy; by <a href="https://sefinek.net" target="_blank" rel="noopener">Sefinek</a>. Wszelkie prawa zastrzeżone.</p>
-			<p class="footer__meta">Preset EU/UK (Narrow)</p>
+			<p class="footer__meta">Preset EU/UK (Narrow) &middot; 869.618 MHz &middot; 62.5 kHz &middot; SF8 &middot; CR8</p>
 		</div>
 	</div>
 </footer>

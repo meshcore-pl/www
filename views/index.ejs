@@ -7,12 +7,13 @@
 	<section class="hero">
 		<div class="hero__inner">
 			<div class="hero__copy">
+				<p class="eyebrow">Preset EU/UK (Narrow)</p>
 				<p class="eyebrow">869.618 MHz &middot; 62.5 kHz &middot; SF8 &middot; CR8</p>
 				<h1>Ogólnopolska społeczność <span>MeshCore</span></h1>
 				<p class="hero__lead">Budujemy w Polsce sieć komunikacji mesh, która działa bez internetu i bez zasięgu GSM. Wpadnij na Discorda i buduj ją z nami! Nasza społeczność wciąż się rozwija, a strona jest nowa i ciągle w budowie. Nowe funkcje, poradniki i inne rzeczy już wkrótce. 73!</p>
 				<div class="hero__actions">
-					<a href="/discord" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Nasz serwer Discord</a>
-					<a href="mailto:contact@sefinek.net" class="btn btn--secondary btn--lg">Kontakt mailowy</a>
+					<a href="/discord" class="btn btn--primary" target="_blank" rel="noopener">Nasz serwer Discord</a>
+					<a href="mailto:contact@sefinek.net" class="btn btn--secondary">Kontakt mailowy</a>
 				</div>
 				<div class="hero__stats">
 					<span class="stat" hidden><strong id="stat-members">–</strong> członków</span>
@@ -33,7 +34,7 @@
 				<div class="about__copy">
 					<p class="eyebrow">Protokół</p>
 					<h2 id="czym-to-heading">Czym jest MeshCore?</h2>
-					<p>MeshCore to <a href="https://github.com/meshcore-dev/MeshCore" target="_blank" rel="noopener">otwarty projekt</a> sieci mesh oparty na radiu LoRa, pozwalający przesyłać wiadomości między urządzeniami bez pomocy internetu czy operatora komórkowego. Sprawdza się w terenie, w górach, na eventach i w sytuacjach awaryjnych, gdzie tradycyjna łączność zawodzi. Większość repeaterów działa przy tym niezależnie od dostawców prądu: wystarczą panele słoneczne i ogniwa.</p>
+					<p>MeshCore to zdecentralizowany system łączności <a href="https://github.com/meshcore-dev/MeshCore" target="_blank" rel="noopener">open source</a>, wykorzystujący radio <a href="https://pl.wikipedia.org/wiki/LoRaWAN" target="_blank" rel="noopener">LoRa</a> do przesyłania wiadomości między urządzeniami bez internetu i operatora komórkowego. Sprawdza się w terenie, w górach, na eventach i w sytuacjach awaryjnych, gdzie tradycyjna łączność zawodzi. Większość repeaterów działa przy tym niezależnie od dostawców prądu: wystarczą panele słoneczne i ogniwa.</p>
 				</div>
 				<figure class="about__photo">
 					<a href="/images/photos/antena-wezla.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ zdjęcie anten węzła">
@@ -56,7 +57,7 @@
 			</div>
 
 			<p class="section__lead">
-				Do pierwszego kontaktu z siecią wystarczy companion, czyli małe urządzenie LoRa, które łączy się z telefonem przez Bluetooth.
+				Do pierwszego kontaktu z siecią wystarczy companion, czyli małe urządzenie LoRa za około 180-220 zł, które łączy się z telefonem przez Bluetooth.
 				Na telefonie potrzebujesz jedynie <a href="https://play.google.com/store/apps/details?id=com.liamcottle.meshcore.android&amp;hl=pl" target="_blank" rel="noopener">aplikacji MeshCore</a>. Bez obaw! Przetłumaczyliśmy ją na język polski.
 				Firmware wgrasz przez przeglądarkę. Pamiętaj, aby w aplikacji wybrać preset EU/UK (Narrow).
 			</p>
@@ -67,6 +68,7 @@
 						<img class="card__img" src="/images/boards/sensecap_t1000e.svg" alt="SenseCAP Card Tracker T1000-E" width="848" height="1264" loading="lazy">
 					</a>
 					<h3>SenseCAP T1000-E</h3>
+					<p class="card__price">około 219 zł</p>
 					<p>Typowy gotowiec wielkości karty płatniczej: obudowa, bateria i GPS w zestawie. Idealny, jeśli nie chcesz bawić się w ogniwa i składanie.</p>
 				</div>
 				<div class="card">
@@ -74,14 +76,16 @@
 						<img class="card__img" src="/images/boards/heltec_v4.svg" alt="Płytka Heltec V4" width="1440" height="736" loading="lazy">
 					</a>
 					<h3>Heltec V4.3</h3>
+					<p class="card__price">około 183 zł</p>
 					<p>Tania i łatwo dostępna płytka z ekranem OLED, oparta na układzie ESP32. W sam raz pod pierwszego companiona.</p>
 				</div>
 				<div class="card">
-					<a class="card__img-link" href="/images/boards/rak_4631.svg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ grafikę RAK 4631">
-						<img class="card__img" src="/images/boards/rak_4631.svg" alt="Płytka RAK 4631" width="1280" height="832" loading="lazy">
+					<a class="card__img-link" href="/images/boards/rak_4631.svg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ grafikę WisBlock RAK4631">
+						<img class="card__img" src="/images/boards/rak_4631.svg" alt="Płytka WisBlock RAK4631" width="1280" height="832" loading="lazy">
 					</a>
-					<h3>RAK 4631</h3>
-					<p>Klasyka wśród repeaterów. Bardzo niski pobór prądu ze względu na moduł nRF. Świetnie działa przy zasilaniu off-grid.</p>
+					<h3>WisBlock RAK4631</h3>
+					<p class="card__price">około 123 zł</p>
+					<p>Klasyka wśród repeaterów. Bardzo niski pobór prądu ze względu na moduł nRF. Świetnie działa przy zasilaniu off-grid. Mod 6 będzie wystarczający.</p>
 				</div>
 				<div class="card">
 					<h3>Nie wiesz, co wybrać?</h3>
@@ -93,10 +97,23 @@
 				<b>Warto wiedzieć</b>
 				<ul>
 					<li>Kupując sprzęt, zawsze wybieraj wersję 868 MHz. Warianty 915 MHz (pod USA) i 433 MHz będą bezużyteczne w polskiej sieci.</li>
-					<li>Płytki z układem nRF pobierają zauważalnie mniej prądu niż te z ESP32, dlatego lepiej sprawdzają się w urządzeniach zasilanych z baterii i paneli słonecznych. Według nas RAK 4631 jest przy tym zdecydowanie pewniejszym wyborem na repeater niż Xiao.</li>
+					<li>Płytki z układem nRF pobierają zauważalnie mniej prądu niż te z ESP32, dlatego lepiej sprawdzają się w urządzeniach zasilanych z baterii i paneli słonecznych. Według nas RAK4631 jest przy tym zdecydowanie pewniejszym wyborem na repeater niż Xiao.</li>
 					<li>Do repeatera wybierz ogniwa Li-Ion (akumulator litowo-jonowy, np. 18650), ponieważ lepiej znoszą pracę na dworze i setki cykli ładowania. Li-Po (akumulator litowo-polimerowy) zostaw raczej companionom.</li>
 				</ul>
 			</div>
+
+			<div class="print-offer">
+				<div class="print-offer__copy">
+					<h3>Mam płytkę, ale nie mam obudowy (a chcę)</h3>
+					<p>Żaden problem. Wydrukujemy dla Ciebie obudowę 3D na prośbę, dopasowaną do Twojej płytki.</p>
+				</div>
+				<div class="print-offer__actions">
+					<a href="https://discord.com/channels/@me/1525636476346564659" class="btn btn--secondary" target="_blank" rel="noopener">Skontaktuj się</a>
+					<a href="mailto:contact@sefinek.net" class="btn btn--secondary">Email</a>
+				</div>
+			</div>
+
+			<p class="cards__soon">Wkrótce na tej stronie zawita dokumentacja z poradnikami, polecanymi antenami i wiele więcej!</p>
 		</div>
 	</section>
 
@@ -147,6 +164,7 @@
 				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg><span>Kładziemy nacisk na open source i wolność. <a href="https://github.com/meshcore-pl/www" target="_blank" rel="noopener">Kod tej strony</a> jest publicznie dostępny.</span></li>
 				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg><span>Powiadomienia o aktualizacjach firmware i aplikacji.</span></li>
 				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg><span>Konfigurator profili: każdy użytkownik ma swój profil na stronie.</span></li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg><span>Lepsza jakość audio na kanałach głosowych, streamowanie w 1440p i 60 FPS oraz wysyłanie plików do 50 MB.</span></li>
 				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#icon-check"></use></svg><span>Estetyczny, dopracowany wygląd serwera.</span></li>
 			</ul>
 		</div>
@@ -227,19 +245,20 @@
 				<p class="eyebrow">Prywatność</p>
 				<h2 id="prywatnosc-heading">Discord zamiast grupy na Facebooku</h2>
 			</div>
-			<p class="section__lead">Meta słynie z inwigilacji użytkowników, dlatego nasza społeczność działa na Discordzie, który podchodzi do prywatności zdecydowanie rozsądniej. Nie potrzebujesz konta z prawdziwym imieniem i nazwiskiem, żeby z nami popisać.</p>
+			<p class="section__lead">Meta słynie z inwigilacji użytkowników, dlatego nasza społeczność działa na Discordzie, który podchodzi do prywatności znacznie rozsądniej. Nie potrzebujesz konta z prawdziwym imieniem i nazwiskiem, żeby z nami popisać.</p>
 		</div>
 	</section>
 
 	<section class="cta">
+		<div class="cta__bg" aria-hidden="true"></div>
 		<div class="cta__inner">
 			<p class="eyebrow">Ostatni hop</p>
 			<h2>Dołącz do MeshCore Polska</h2>
 			<p>Im więcej węzłów, tym dalej sięga sieć. Twój może być następny (;</p>
-			<a href="/discord" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Dołącz już teraz</a>
+			<a href="/discord" class="btn btn--primary" target="_blank" rel="noopener">Dołącz już teraz</a>
 		</div>
 		<p class="cta__credit">Wałcz z góry</p>
 	</section>
 </main>
 
-<%- include('./includes/footer.ejs') %>
+<%- include('./includes/footer.ejs', { footerPhoto: true }) %>
