@@ -2,7 +2,7 @@
   "name": "meshcorepolska",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/meshcore-pl/www#readme",
+  "homepage": "https://meshcorepolska.org",
   "bugs": {
     "url": "https://github.com/meshcore-pl/www/issues"
   },
@@ -21,6 +21,7 @@
     "update": "npm run pull && npm ci --omit=dev && pm2 restart mcpl"
   },
   "dependencies": {
+    "axios": "^1.18.1",
     "ejs": "^6.0.1",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
