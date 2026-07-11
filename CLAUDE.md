@@ -25,10 +25,11 @@ Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFil
 
 - `routes/Pages.js`: strony HTML. `/` renderuje `views/index.ejs`, `/discord` przekierowuje na zaproszenie Discord (celowo `discord.com/invite` zamiast `discord.gg`, żeby uniknąć łańcucha przekierowań).
 - `routes/Api.js`: `/api/v1/discord-stats`, jedyny endpoint API. Dane z `services/discordInvite.js` (invite API Discorda) z 60-sekundowym cache w pamięci procesu, plus `Cache-Control: public, max-age=60` na odpowiedzi. Liczby członków/online są przybliżone (approximate_* z API).
-- `utils/renderError.js`: wszystkie błędy (404/429/500/503) renderują `views/error.ejs` z polskim komunikatem i `noindex`.
-- Widoki: `views/includes/header.ejs` przyjmuje `title`, `description`, opcjonalnie `noindex`; strony przekazują też `siteUrl` i `canonicalUrl` (routing musi je dostarczyć do `res.render`).
+- `utils/renderError.js`: wszystkie błędy (404/429/500/503) renderują `views/error.ejs` z polskim komunikatem.
+- Widoki: `views/includes/header.ejs` przyjmuje `title` i `description`; strony przekazują też `siteUrl` i `canonicalUrl` (routing musi je dostarczyć do `res.render`).
 - `public/js/mesh-map.js`: animowana mapa Polski na canvasie w hero (kontur kraju z geoBoundaries uproszczony do 300 punktów, deterministyczny PRNG z seedem, graf węzłów z gwarancją spójności, krawędzie testowane na przecięcie z granicą). Zmiana układu siatki = zmiana seeda w `mulberry32(...)`.
 - `public/js/main.js`: pobiera statystyki Discorda i odsłania widget w hero.
+- `public/js/lightbox.js`: powiększanie obrazów w overlayu; podpina się pod każdy link `a[data-lightbox]`.
 
 ## Styl kodu
 

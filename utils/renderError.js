@@ -13,7 +13,6 @@ module.exports = (res, status) => {
 		canonicalUrl: `${siteUrl}${res.req.originalUrl}`,
 		title: `Błąd ${status}: MeshCore Polska`,
 		description: 'Wystąpił błąd podczas ładowania strony MeshCore Polska.',
-		noindex: true,
 		status,
 		message: MESSAGES[status] || 'Wystąpił błąd.',
 	});
