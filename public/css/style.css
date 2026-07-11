@@ -411,9 +411,13 @@ p {
 	margin-bottom: 0;
 }
 
+.section__head:has(+ .section__lead) {
+	margin-bottom: 1.25rem;
+}
+
 .section__lead {
-	max-width: 680px;
-	margin: -1.25rem auto 0;
+	max-width: 860px;
+	margin: 0 auto;
 	text-align: center;
 	font-size: 1.05rem;
 }
@@ -482,6 +486,10 @@ p {
 	height: 88px;
 	width: auto;
 	margin: 0 auto 1.1rem;
+}
+
+.card__img-link {
+	display: block;
 }
 
 .cards__note {
@@ -677,7 +685,7 @@ p {
 	margin-top: 0.3rem;
 }
 
-.profile__shots a {
+a[data-lightbox] {
 	cursor: zoom-in;
 }
 
@@ -815,15 +823,21 @@ p {
 .footer::before {
 	content: '';
 	position: absolute;
-	inset: -20px;
-	background:
-		linear-gradient(180deg, rgba(14, 17, 24, 0.8), rgba(14, 17, 24, 0.9)),
-		url('/images/walcz-drone.jpg') center 78% / cover no-repeat;
-	filter: blur(6px) saturate(0.9);
+	inset: 0;
+	background: url('/images/walcz-drone.jpg') center / cover no-repeat fixed;
+}
+
+.footer::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(14, 17, 24, 0.68), rgba(14, 17, 24, 0.8));
+	backdrop-filter: blur(6px) saturate(0.9);
 }
 
 .footer__inner {
 	position: relative;
+	z-index: 1;
 	max-width: var(--container);
 	margin: 0 auto;
 }
@@ -939,6 +953,10 @@ p {
 			linear-gradient(180deg, var(--bg) 0%, rgba(10, 12, 17, 0.82) 26%, rgba(10, 12, 17, 0.86) 100%),
 			url('/images/walcz-drone.jpg') center 62% / cover no-repeat,
 			var(--bg-alt);
+	}
+
+	.footer::before {
+		background: url('/images/walcz-drone.jpg') center 78% / cover no-repeat;
 	}
 }
 

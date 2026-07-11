@@ -35,40 +35,6 @@ const loadDiscordStats = async () => {
 
 void loadDiscordStats();
 
-const initLightbox = () => {
-	const links = document.querySelectorAll('.profile__shots a');
-	if (!links.length) return;
-
-	const overlay = document.createElement('div');
-	overlay.className = 'lightbox';
-	overlay.hidden = true;
-
-	const image = document.createElement('img');
-	overlay.appendChild(image);
-	document.body.appendChild(overlay);
-
-	const close = () => {
-		overlay.hidden = true;
-	};
-
-	links.forEach((link) => {
-		link.addEventListener('click', (event) => {
-			event.preventDefault();
-			const thumb = link.querySelector('img');
-			image.src = link.href;
-			image.alt = thumb ? thumb.alt : '';
-			overlay.hidden = false;
-		});
-	});
-
-	overlay.addEventListener('click', close);
-	document.addEventListener('keydown', (event) => {
-		if (event.key === 'Escape' && !overlay.hidden) close();
-	});
-};
-
-initLightbox();
-
 const nav = document.querySelector('.nav');
 const updateNav = () => nav.classList.toggle('nav--scrolled', window.scrollY > 10);
 updateNav();
