@@ -4,6 +4,7 @@ const helmet = require('helmet');
 
 // Routes
 const PagesRouter = require('./routes/Pages.js');
+const DocsRouter = require('./routes/Docs.js');
 const APIRouter = require('./routes/Api.js');
 
 // Middleware imports
@@ -29,6 +30,7 @@ app.use(timeout());
 app.use(geoblock);
 
 app.use('/', PagesRouter);
+app.use('/', DocsRouter);
 app.use('/api/v1', APIRouter);
 
 

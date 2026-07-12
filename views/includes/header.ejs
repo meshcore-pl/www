@@ -3,21 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="dark">
 	<title><%= title %></title>
+
+	<!-- Primary meta -->
 	<meta name="description" content="<%= description %>">
 	<link rel="canonical" href="<%= canonicalUrl %>">
-
 	<meta name="theme-color" content="#0a0c11">
 
-	<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
-	<link rel="icon" href="/images/brand/logo-3-192.png" type="image/png" sizes="192x192" >
-	<link rel="apple-touch-icon" href="/images/brand/logo-3-180.png" sizes="180x180">
-	<link rel="manifest" href="/manifest.json">
+	<!-- JavaScript -->
+	<script src="https://cdn.sefinek.net/js/progressbar.js"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+	<!-- Open Graph -->
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="MeshCore Polska">
 	<meta property="og:locale" content="pl_PL">
@@ -29,15 +30,24 @@
 	<meta property="og:image:height" content="675">
 	<meta property="og:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
 
+	<!-- Twitter / X Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="<%= title %>">
 	<meta name="twitter:description" content="<%= description %>">
 	<meta name="twitter:image" content="<%= siteUrl %>/images/brand/banner-og.jpg">
 	<meta name="twitter:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
 
+	<!-- Icons & manifest -->
+	<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
+	<link rel="icon" href="/images/brand/logo-3-192.png" type="image/png" sizes="192x192" >
+	<link rel="apple-touch-icon" href="/images/brand/logo-3-180.png" sizes="180x180">
+	<link rel="manifest" href="/manifest.json">
+
+	<!-- Stylesheets -->
 	<link rel="stylesheet" href="/css/global.css">
 	<% if (locals.pageStyle) { %><link rel="stylesheet" href="/css/<%= pageStyle %>.css"><% } %>
 
+	<!-- schema.org -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -71,6 +81,7 @@
 
 		<div class="nav__right">
 			<nav class="nav__links" id="nav-menu" aria-label="Menu główne">
+				<a href="/dokumentacja" class="nav__link">Dokumentacja</a>
 				<a href="https://meshcore.io" class="nav__link" target="_blank" rel="noopener">MeshCore.io</a>
 				<a href="https://map.meshcore.io/?zoom=7&amp;lat=52.2893&amp;lon=19.1162" class="nav__link" target="_blank" rel="noopener">Mapa węzłów</a>
 				<a href="https://flasher.meshcore.io/" class="nav__link" target="_blank" rel="noopener">Flasher</a>

@@ -1,0 +1,13 @@
+<%- include('../includes/header.ejs', {
+	title,
+	description,
+	pageStyle: 'docs',
+}) %>
+
+<main class="docs-main" id="docs-view" tabindex="-1">
+	<%- include('./_page-content.ejs', { page, group, groups }) %>
+</main>
+
+<script type="module" src="/js/docs-router.js"></script>
+
+<%- include('../includes/footer.ejs', { footer: false }) %>

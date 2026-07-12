@@ -1,4 +1,7 @@
 User-agent: *
-Allow: /
+Disallow: /cdn-cgi
+Disallow: /cdn-cgi/
+Disallow: /.well-known
+Disallow: /.well-known/
 
 Sitemap: https://meshcorepolska.org/sitemap.xml

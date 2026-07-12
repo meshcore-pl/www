@@ -26,7 +26,9 @@
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
     "express-timeout-handler": "^2.2.2",
+    "frontmatter-md": "^1.0.3",
     "helmet": "^8.3.0",
+    "marked": "^18.0.6",
     "morgan": "^1.11.0"
   },
   "devDependencies": {

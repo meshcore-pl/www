@@ -1,0 +1,69 @@
+<div class="docs-layout<%= page.toc.length ? '' : ' docs-layout--no-toc' %>">
+	<aside class="docs-sidebar">
+		<div class="docs-sidebar__inner">
+			<nav class="docs-nav" aria-label="Dokumentacja">
+				<% groups.forEach(g => { %>
+				<div class="docs-nav-group">
+					<p class="docs-nav-group__title">
+						<% if (g.icon.startsWith('/')) { %><img class="docs-nav-group__icon" src="<%= g.icon %>" alt="" width="16" height="16" loading="lazy"><% } else { %><span class="docs-nav-group__icon"><%= g.icon %></span><% } %>
+						<%= g.title %>
+					</p>
+					<ul>
+						<% g.pages.forEach(p => { %>
+						<li>
+							<a href="/dokumentacja/<%= g.slug %>/<%= p.slug %>"
+							   class="<%= g.slug === group.slug && p.slug === page.slug ? 'active' : '' %>"
+							   <%= g.slug === group.slug && p.slug === page.slug ? 'aria-current="page"' : '' %>>
+								<%= p.title %>
+							</a>
+						</li>
+						<% }) %>
+					</ul>
+				</div>
+				<% }) %>
+			</nav>
+
+			<a href="/dokumentacja" class="docs-sidebar__home">&larr; Spis treści</a>
+		</div>
+	</aside>
+
+	<article class="docs-content" id="docs-content">
+		<%- page.html %>
+
+		<nav class="docs-pagination" aria-label="Nawigacja stron">
+			<%
+			const idx = group.pages.findIndex(p => p.slug === page.slug);
+			const prev = idx > 0 ? group.pages[idx - 1] : null;
+			const next = idx < group.pages.length - 1 ? group.pages[idx + 1] : null;
+			%>
+			<% if (prev) { %>
+			<a href="/dokumentacja/<%= group.slug %>/<%= prev.slug %>" class="docs-pagination__link docs-pagination__link--prev">
+				<span>&larr; Poprzednia</span>
+				<strong><%= prev.title %></strong>
+			</a>
+			<% } else { %><span></span><% } %>
+
+			<% if (next) { %>
+			<a href="/dokumentacja/<%= group.slug %>/<%= next.slug %>" class="docs-pagination__link docs-pagination__link--next">
+				<span>Następna &rarr;</span>
+				<strong><%= next.title %></strong>
+			</a>
+			<% } else { %><span></span><% } %>
+		</nav>
+	</article>
+
+	<% if (page.toc.length) { %>
+	<nav class="docs-toc" aria-label="Na tej stronie">
+		<div class="docs-toc__inner">
+			<p class="docs-toc__title">Na tej stronie</p>
+			<ul class="docs-toc__list">
+				<% page.toc.forEach(item => { %>
+				<li><a href="#<%= item.id %>" class="<%= item.level === 3 ? 'docs-toc__link--h3' : '' %>"><%= item.text %></a></li>
+				<% }) %>
+			</ul>
+		</div>
+	</nav>
+	<% } %>
+</div>
+
+<script type="module" src="/js/docs.js"></script>
