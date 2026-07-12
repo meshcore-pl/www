@@ -1,0 +1,30 @@
+.section--notfound {
+	text-align: center;
+	padding-top: calc(6rem + var(--nav-h));
+	padding-bottom: 6rem;
+}
+
+.errorpage__code {
+	font-size: clamp(4.5rem, 14vw, 8rem);
+	color: var(--red-bright);
+	text-shadow: 0 0 48px var(--red-glow);
+	margin-bottom: 0.15em;
+}
+
+.errorpage__msg {
+	max-width: 480px;
+	margin: 0 auto 2rem;
+	font-size: 1.05rem;
+}
+
+.section--notfound .hero__actions {
+	justify-content: center;
+	margin-bottom: 0;
+}
+
+@media (max-width: 880px) {
+	.section--notfound {
+		padding-top: calc(4rem + var(--nav-h));
+		padding-bottom: 4rem;
+	}
+}

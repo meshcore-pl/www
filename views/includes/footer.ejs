@@ -1,5 +1,4 @@
-<footer class="footer<%= locals.footerPhoto ? ' footer--photo' : '' %>">
-	<% if (locals.footerPhoto) { %><div class="footer__bg" aria-hidden="true"></div><% } %>
+<footer class="footer">
 	<div class="footer__inner">
 		<div class="footer__top">
 			<div class="footer__brand">
@@ -21,6 +20,7 @@
 		</div>
 	</div>
 </footer>
+<% if (locals.outro) { %></div><% } %>
 <script src="/js/main.js" defer></script>
 <script src="/js/lightbox.js" defer></script>
 <script src="/js/mesh-map.js" defer></script>

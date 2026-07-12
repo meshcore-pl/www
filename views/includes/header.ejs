@@ -35,7 +35,8 @@
 	<meta name="twitter:image" content="<%= siteUrl %>/images/brand/banner-og.jpg">
 	<meta name="twitter:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
 
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/global.css">
+	<% if (locals.pageStyle) { %><link rel="stylesheet" href="/css/<%= pageStyle %>.css"><% } %>
 
 	<script type="application/ld+json">
 	{

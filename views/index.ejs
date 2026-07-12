@@ -1,6 +1,7 @@
 <%- include('./includes/header.ejs', {
 	title: 'MeshCore Polska - Ogólnopolska społeczność sieci mesh',
 	description: 'MeshCore Polska to pierwsza ogólnopolska społeczność skupiona wokół sieci MeshCore, komunikacji mesh bez internetu i GSM. Dołącz na nasz serwer Discord.',
+	pageStyle: 'index',
 }) %>
 
 <main>
@@ -249,16 +250,16 @@
 		</div>
 	</section>
 
+</main>
+
+<div class="outro">
 	<section class="cta">
-		<div class="cta__bg" aria-hidden="true"></div>
 		<div class="cta__inner">
 			<p class="eyebrow">Ostatni hop</p>
 			<h2>Dołącz do MeshCore Polska</h2>
 			<p>Im więcej węzłów, tym dalej sięga sieć. Twój może być następny (;</p>
 			<a href="/discord" class="btn btn--primary" target="_blank" rel="noopener">Dołącz już teraz</a>
 		</div>
-		<p class="cta__credit">Wałcz z góry</p>
 	</section>
-</main>
 
-<%- include('./includes/footer.ejs', { footerPhoto: true }) %>
+<%- include('./includes/footer.ejs', { outro: true }) %>
