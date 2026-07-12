@@ -26,6 +26,7 @@ const connectTCP = () => {
 		reconnectTimer = null;
 	}
 
+	buffer = '';
 	tcpSocket = new Socket();
 	tcpSocket.setKeepAlive(true);
 	tcpSocket.setNoDelay(true);

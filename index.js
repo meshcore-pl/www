@@ -36,10 +36,7 @@ app.use('/api/v1', APIRouter);
 
 // Error handling
 app.use((req, res) => RenderError(res, 404));
-app.use((err, req, res, _next) => {
-	console.error(err);
-	RenderError(res, 500);
-});
+app.use((err, req, res, _next) => RenderError(res, 500, err));
 
 // Start the server
 const { DOMAIN, PORT } = process.env;
