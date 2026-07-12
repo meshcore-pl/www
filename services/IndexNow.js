@@ -11,9 +11,8 @@ const parseSitemap = () => {
 	return [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1].trim());
 };
 
-const submitToIndexNow = async (urls, batchNum, totalBatches) => {
+const submitToIndexNow = async (key, urls, batchNum, totalBatches) => {
 	try {
-		const key = fs.readFileSync(`public/${FILENAME}.txt`, 'utf8').trim();
 		const payload = {
 			host: DOMAIN,
 			key,
@@ -36,6 +35,7 @@ const submitToIndexNow = async (urls, batchNum, totalBatches) => {
 (async () => {
 	console.log('Domain:', DOMAIN);
 
+	const key = fs.readFileSync(`public/${FILENAME}.txt`, 'utf8').trim();
 	const urls = parseSitemap();
 	console.log(`Parsed URLs: ${urls.length}`);
 
@@ -45,7 +45,7 @@ const submitToIndexNow = async (urls, batchNum, totalBatches) => {
 		const chunk = urls.slice(i, i + BATCH_SIZE);
 		const batchNum = Math.floor(i / BATCH_SIZE) + 1;
 		console.log(`Submitting batch ${batchNum}/${totalBatches} (${chunk.length} URLs, range ${i + 1}-${i + chunk.length})`);
-		await submitToIndexNow(chunk, batchNum, totalBatches);
+		await submitToIndexNow(key, chunk, batchNum, totalBatches);
 	}
 
 	console.log('All batches processed.');

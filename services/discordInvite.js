@@ -1,3 +1,5 @@
+const axios = require('./axios.js');
+
 const CACHE_TTL_MS = 60 * 1000;
 const ERROR_BACKOFF_MS = 15 * 1000;
 const INVITE_API_URL = `https://discord.com/api/v10/invites/${process.env.DISCORD_INVITE_CODE}?with_counts=true`;
@@ -5,15 +7,9 @@ const INVITE_API_URL = `https://discord.com/api/v10/invites/${process.env.DISCOR
 let cache = null, cacheExpiresAt = 0, nextAttemptAt = 0, pending = null;
 
 const fetchStats = async () => {
-	const res = await fetch(INVITE_API_URL, {
+	const { data } = await axios.get(INVITE_API_URL, {
 		headers: { Accept: 'application/json' },
 	});
-
-	if (!res.ok) {
-		throw new Error(`Discord API responded with ${res.status}`);
-	}
-
-	const data = await res.json();
 
 	return {
 		guildName: data.guild?.name ?? null,

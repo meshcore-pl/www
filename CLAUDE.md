@@ -1,0 +1,55 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Projekt
+
+Strona [meshcorepolska.org](https://meshcorepolska.org), czyli polska społeczność sieci mesh MeshCore. Express 5 + EJS (SSR), CommonJS, Node >= 20.6. Cała treść strony i komunikaty są po polsku. Licencja PolyForm Noncommercial 1.0.0.
+
+## Uruchamianie
+
+```
+node index.js
+```
+
+Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `DISCORD_INVITE_CODE`, `TCPDATA_HOST`, `TCPDATA_PORT`. `DOMAIN` to pełny adres strony z protokołem, używany też w canonicalach i tagach OG. `TCPDATA_*` wskazuje usługę TCP z GeoIP (`services/tcpClient.js`); bez tych zmiennych proces kończy się przy starcie.
+
+- Brak kroku budowania. Frontend to czysty CSS i JS serwowane bezpośrednio z `public/`.
+- Brak testów (skrypt `npm test` odwołuje się do jesta, którego nie ma w zależnościach).
+- Lint: `npx eslint .` (flat config w `eslint.config.mjs`; eslint nie jest w devDependencies).
+- Produkcja: PM2, aplikacja nazywa się `mcpl` (`ecosystem.config.js`). Deploy: `npm run update` (pull + `npm ci --omit=dev` + `pm2 restart mcpl`). Serwer po starcie wysyła `process.send('ready')` (PM2 `wait_ready`).
+- `services/IndexNow.js` to samodzielny skrypt (nie route) do ręcznego zgłaszania URL-i z `public/sitemap.xml` do IndexNow; wymaga pliku klucza w `public/`.
+
+## Architektura
+
+`index.js` składa całość: helmet (bez CSP), `express.static('public')`, morgan, rate limiter (tylko w produkcji), timeout, geoblock, potem routery i obsługa błędów.
+
+- `middlewares/geoblock.js`: blokuje ruch z Ukrainy na dwóch sygnałach: język `uk` w `Accept-Language` oraz kraj `UA` z GeoIP (`tcpClient.geoCheck`). Renderuje dedykowaną stronę `views/blocked.ejs` ze statusem 403. Static jest serwowany przed blokadą; przy niedostępności usługi TCP blokada po kraju przepuszcza ruch (fail-open).
+
+- `routes/Pages.js`: strony statyczne. `/` renderuje `views/index.ejs`, `/discord` przekierowuje na zaproszenie Discord (celowo `discord.com/invite` zamiast `discord.gg`, żeby uniknąć łańcucha przekierowań).
+- `routes/Api.js`: `/api/v1/discord-stats`, jedyny endpoint API. Dane z `services/discordInvite.js` (invite API Discorda) z 60-sekundowym cache w pamięci procesu, plus `Cache-Control: public, max-age=60` na odpowiedzi. Liczby członków/online są przybliżone (approximate_* z API).
+- `utils/renderError.js`: wszystkie błędy (404/429/500/503) renderują `views/error.ejs` z polskim komunikatem.
+- Widoki: `views/includes/header.ejs` przyjmuje `title`, `description` i opcjonalny `pageStyle` (dołącza `/css/<pageStyle>.css`); strony przekazują też `siteUrl` i `canonicalUrl` (routing musi je dostarczyć do `res.render`).
+- `public/js/mesh-map.js`: animowana mapa Polski na canvasie w hero (kontur kraju z geoBoundaries uproszczony do 300 punktów, deterministyczny PRNG z seedem, graf węzłów z gwarancją spójności, krawędzie testowane na przecięcie z granicą). Zmiana układu siatki = zmiana seeda w `mulberry32(...)`.
+- `public/js/index.js`: pobiera statystyki Discorda i odsłania widget w hero strony głównej.
+- `public/js/lightbox.js`: powiększanie obrazów w overlayu; podpina się pod każdy link `a[data-lightbox]`.
+- `public/js/nav.js`: zachowanie nagłówka (cień przy scrollu, mobilne menu).
+
+### System dokumentacji (`/dokumentacja`)
+
+Treść dokumentacji jest plikami Markdown, renderowanymi server-side, z SPA-podobną nawigacją po stronie klienta.
+
+- `data/docs.js`: statyczna struktura grup i stron (slug, title, icon, description dla każdej grupy; slug/title dla każdej strony). To jedyne źródło prawdy o tym, jakie strony istnieją i w jakiej kolejności.
+- `content/docs/<grupa>/<slug>.md`: treść stron, frontmatter (`title`, `description`) + Markdown. Każda strona wpisana w `data/docs.js` musi mieć odpowiadający plik `.md`, inaczej `services/docs.js` wyrzuci błąd przy starcie (pliki są czytane synchronicznie raz, przy imporcie modułu).
+- `services/docs.js`: wczytuje i parsuje wszystkie strony przy starcie procesu (`marked` + `frontmatter-md`), buduje spis treści (h2/h3) i cache'uje wynik w pamięci (`Map`). Nagłówkom nadaje `id` (slugified, z obsługą polskich znaków diakrytycznych) do kotwiczenia w TOC. Zmiana treści `.md` wymaga restartu procesu, nie ma hot reloadu.
+- `routes/Docs.js`: trzy trasy — indeks, grupa, pojedyncza strona. Każda potrafi odpowiedzieć na dwa sposoby: pełny render EJS (nawigacja z pełnym przeładowaniem) albo JSON z wyrenderowanym fragmentem HTML (gdy request ma nagłówek `X-Docs-Fetch: 1`) — używane przez router kliencki do podmiany treści bez przeładowania strony.
+- `public/js/docs-router.js`: przechwytuje kliknięcia w linki wewnątrz `/dokumentacja/*`, robi `fetch` z `X-Docs-Fetch: 1`, podmienia `#docs-view` i metadane (title, canonical, OG) bez pełnego przeładowania. Zarządza cyklem życia modułów stron przez `public/js/lib/page.js` (rejestr `init`/`destroy` per moduł, żeby np. listenery scrolla z poprzedniej strony nie zostały po nawigacji).
+- `public/js/docs.js`: logika strony treści dokumentacji (podświetlanie bloków kodu, aktywna pozycja w spisie treści przy scrollu, płynne przewijanie do kotwic). Rejestruje się przez `definePage()` z `lib/page.js`, więc `docs-router.js` woła jego `init`/`destroy` przy każdej nawigacji SPA.
+- Pliki `public/js/docs.js`, `docs-router.js`, `lib/page.js` to moduły ES (`import`/`export`, `type="module"` w EJS), inne skrypty w `public/js` są zwykłymi skryptami globalnymi ładowanymi z `defer`.
+
+## Styl kodu
+
+- Tabulatory, pojedyncze cudzysłowy, średniki, `prefer-const`, przecinki końcowe w wieloliniowych tablicach/obiektach (patrz `eslint.config.mjs`).
+- Nie dodawaj komentarzy w kodzie, właściciel utrzymuje kod bez komentarzy.
+- Nie używaj znaku — (pauzy) w plikach zapisywanych do repo.
+- Backend (`routes/`, `services/`, `middlewares/`, `utils/`) to CommonJS (`require`/`module.exports`). `public/js` to skrypty przeglądarkowe: większość to globalne IIFE-podobne skrypty bez modułów, ale pliki związane z dokumentacją (`docs.js`, `docs-router.js`, `lib/page.js`) są modułami ES.

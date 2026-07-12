@@ -10,7 +10,6 @@ const normalizeBody = req => {
 	return JSON.stringify(body);
 };
 
-morgan.token('lang', (req, res) => res.locals.languageCode ? `- ${res.locals.languageCode} -` : '');
 morgan.token('body', normalizeBody);
 
-module.exports = morgan('[:status :method :response-time ms] :url :user-agent :lang :remote-addr ":referrer" :body', { skip });
+module.exports = morgan('[:status :method :response-time ms] :url :user-agent :remote-addr ":referrer" :body', { skip });

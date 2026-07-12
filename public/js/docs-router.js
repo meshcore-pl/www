@@ -56,10 +56,11 @@ const swapView = async html => {
 		if (old.type !== 'module') continue;
 
 		const absUrl = new URL(old.getAttribute('src'), location.href).href;
-		if (!hasPage(absUrl)) await import(absUrl);
+		const alreadyLoaded = hasPage(absUrl);
+		if (!alreadyLoaded) await import(absUrl);
 		if (hasPage(absUrl)) {
 			const api = getPage(absUrl);
-			api.init?.();
+			if (alreadyLoaded) api.init?.();
 			activeModules.push({ url: absUrl, api });
 		}
 	}

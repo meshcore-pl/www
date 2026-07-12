@@ -17,7 +17,6 @@
   "scripts": {
     "m": "ncu -u && npm install && npm update",
     "pull": "git pull origin main",
-    "test": "jest",
     "update": "npm run pull && npm ci --omit=dev && pm2 restart mcpl"
   },
   "dependencies": {

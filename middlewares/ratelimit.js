@@ -6,6 +6,5 @@ module.exports = rateLimit({
 	limit: 52,
 	standardHeaders: 'draft-7',
 	legacyHeaders: false,
-	skip: () => process.env.NODE_ENV === 'development',
 	handler: (req, res) => RenderError(res, 429),
 });
