@@ -339,9 +339,8 @@
 	list-style: none;
 	margin: 0 auto;
 	padding: 0;
-	max-width: 730px;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
 	gap: 0.9rem;
 }
 
@@ -355,6 +354,14 @@
 	padding: 1.05rem 1.3rem;
 	font-size: 1rem;
 	color: var(--text);
+}
+
+@media (min-width: 900px) {
+	.steps li:nth-child(odd):last-child {
+		grid-column: 1 / -1;
+		width: calc(50% - 0.45rem);
+		justify-self: center;
+	}
 }
 
 .steps__icon {
