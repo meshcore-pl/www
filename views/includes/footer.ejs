@@ -20,7 +20,10 @@
 		</div>
 	</div>
 </footer>
+<% if (locals.outro) { %></div><% } %>
 
 <script src="/js/nav.js" defer></script>
+<% (locals.scripts || []).forEach(src => { %><script src="<%= src %>" defer></script>
+<% }) %>
 </body>
 </html>

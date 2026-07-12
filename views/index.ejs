@@ -156,7 +156,7 @@
 	<section class="section section--alt" aria-labelledby="jak-heading">
 		<div class="section__inner">
 			<div class="section__head">
-				<p class="eyebrow">Serwer</p>
+				<p class="eyebrow">Serwer Discord</p>
 				<h2 id="jak-heading">Co nas wyróżnia?</h2>
 			</div>
 			<ul class="steps">
@@ -261,10 +261,5 @@
 			<a href="/discord" class="btn btn--primary" target="_blank" rel="noopener">Dołącz już teraz</a>
 		</div>
 	</section>
-</div>
 
-<script src="/js/index.js" defer></script>
-<script src="/js/lightbox.js" defer></script>
-<script src="/js/mesh-map.js" defer></script>
-
-<%- include('./includes/footer.ejs') %>
+<%- include('./includes/footer.ejs', { outro: true, scripts: ['/js/index.js', '/js/lightbox.js', '/js/mesh-map.js'] }) %>
