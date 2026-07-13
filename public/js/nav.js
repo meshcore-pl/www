@@ -3,6 +3,10 @@ const updateNav = () => nav.classList.toggle('nav--scrolled', window.scrollY > 1
 updateNav();
 window.addEventListener('scroll', updateNav, { passive: true });
 
+const syncNavHeight = () => document.documentElement.style.setProperty('--nav-h-live', `${nav.offsetHeight}px`);
+syncNavHeight();
+window.addEventListener('resize', syncNavHeight, { passive: true });
+
 const navToggle = document.querySelector('.nav__toggle');
 if (navToggle) {
 	const closeMenu = () => {

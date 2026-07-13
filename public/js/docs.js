@@ -4,6 +4,10 @@ import { highlightCodeBlocks } from 'https://cdn.sefinek.net/js/codeBlocks.js';
 let scrollEl = null;
 let onScroll = null;
 let onAnchorClick = null;
+let onToggleClick = null;
+let onBackdropClick = null;
+let onSidebarClick = null;
+let onKeydown = null;
 
 const destroy = () => {
 	if (scrollEl && onScroll) scrollEl.removeEventListener('scroll', onScroll);
@@ -12,6 +16,21 @@ const destroy = () => {
 
 	if (onAnchorClick) document.removeEventListener('click', onAnchorClick);
 	onAnchorClick = null;
+
+	const toggleBtn = document.getElementById('docs-mobile-toc-btn');
+	if (toggleBtn && onToggleClick) toggleBtn.removeEventListener('click', onToggleClick);
+	onToggleClick = null;
+
+	const backdrop = document.getElementById('docs-mobile-toc-backdrop');
+	if (backdrop && onBackdropClick) backdrop.removeEventListener('click', onBackdropClick);
+	onBackdropClick = null;
+
+	const sidebar = document.getElementById('docs-sidebar');
+	if (sidebar && onSidebarClick) sidebar.removeEventListener('click', onSidebarClick);
+	onSidebarClick = null;
+
+	if (onKeydown) document.removeEventListener('keydown', onKeydown);
+	onKeydown = null;
 };
 
 const init = () => {
@@ -27,7 +46,7 @@ const init = () => {
 		: null;
 
 	const headings = [...content.querySelectorAll('h2[id], h3[id]')];
-	const tocLinks = [...document.querySelectorAll('.docs-toc a')];
+	const tocLinks = [...document.querySelectorAll('.docs-toc a, .docs-sidebar__toc a')];
 
 	const setActive = id => {
 		const sel = `#${id}`;
@@ -78,6 +97,37 @@ const init = () => {
 	const initial = targetFor(location.hash);
 	if (initial) requestAnimationFrame(() => initial.scrollIntoView({ block: 'start' }));
 	update();
+
+	const toggleBtn = document.getElementById('docs-mobile-toc-btn');
+	const backdrop = document.getElementById('docs-mobile-toc-backdrop');
+	const sidebar = document.getElementById('docs-sidebar');
+	if (toggleBtn && backdrop && sidebar) {
+		const closeDrawer = () => {
+			sidebar.classList.remove('is-open');
+			backdrop.hidden = true;
+			toggleBtn.setAttribute('aria-expanded', 'false');
+		};
+
+		onToggleClick = () => {
+			const open = sidebar.classList.toggle('is-open');
+			backdrop.hidden = !open;
+			toggleBtn.setAttribute('aria-expanded', String(open));
+		};
+		toggleBtn.addEventListener('click', onToggleClick);
+
+		onBackdropClick = closeDrawer;
+		backdrop.addEventListener('click', onBackdropClick);
+
+		onSidebarClick = e => {
+			if (e.target.closest('a')) closeDrawer();
+		};
+		sidebar.addEventListener('click', onSidebarClick);
+
+		onKeydown = e => {
+			if (e.key === 'Escape') closeDrawer();
+		};
+		document.addEventListener('keydown', onKeydown);
+	}
 };
 
 definePage(import.meta.url, { init, destroy });

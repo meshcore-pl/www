@@ -13,7 +13,7 @@ module.exports = [
 		slug: 'discord',
 		icon: '/images/brand/logo-1.jpg',
 		title: 'Serwer Discord',
-		description: 'Dokumentacja serwera Discord MeshCore Polska. Miejsce, w którym polska społeczność MeshCore wymienia się wiedzą, pomaga w konfiguracji sprzętu i wspólnie rozwija lokalną sieć mesh.',
+		description: 'Dokumentacja głównego serwera MeshCore Polska - miejsca, w którym społeczność dzieli się wiedzą, pomaga w konfiguracji sprzętu i wspólnie rozwija sieć.',
 		pages: [
 			{ slug: 'wprowadzenie', title: 'Wprowadzenie' },
 			{ slug: 'regulamin', title: 'Regulamin serwera' },
