@@ -11,7 +11,6 @@ const APIRouter = require('./routes/Api.js');
 const timeout = require('./middlewares/timeout.js');
 const logger = require('./middlewares/morgan.js');
 const limiter = require('./middlewares/ratelimit.js');
-const geoblock = require('./middlewares/geoblock.js');
 const RenderError = require('./utils/renderError.js');
 
 // Create an Express app
@@ -27,7 +26,6 @@ app.use(express.static('public'));
 app.use(logger);
 if (process.env.NODE_ENV === 'production') app.use(limiter);
 app.use(timeout());
-app.use(geoblock);
 
 app.use('/', PagesRouter);
 app.use('/', DocsRouter);

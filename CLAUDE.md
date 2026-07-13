@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Projekt
 
-Strona [meshcorepolska.org](https://meshcorepolska.org), czyli polska społeczność sieci mesh MeshCore. Express 5 + EJS (SSR), CommonJS, Node >= 20.6. Cała treść strony i komunikaty są po polsku. Licencja PolyForm Noncommercial 1.0.0.
+Strona [meshcorepolska.org](https://meshcorepolska.org), czyli polska społeczność sieci mesh MeshCore. Express 5 + EJS (SSR), CommonJS, Node >= 20.12. Cała treść strony i komunikaty są po polsku. Licencja PolyForm Noncommercial 1.0.0.
 
 ## Uruchamianie
 
@@ -12,7 +12,7 @@ Strona [meshcorepolska.org](https://meshcorepolska.org), czyli polska społeczno
 node index.js
 ```
 
-Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `DISCORD_INVITE_CODE`, `TCPDATA_HOST`, `TCPDATA_PORT`. `DOMAIN` to pełny adres strony z protokołem, używany też w canonicalach i tagach OG. `TCPDATA_*` wskazuje usługę TCP z GeoIP (`services/tcpClient.js`); bez tych zmiennych proces kończy się przy starcie.
+Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `DISCORD_INVITE_CODE`. `DOMAIN` to pełny adres strony z protokołem, używany też w canonicalach i tagach OG.
 
 - Brak kroku budowania. Frontend to czysty CSS i JS serwowane bezpośrednio z `public/`.
 - Brak testów (skrypt `npm test` odwołuje się do jesta, którego nie ma w zależnościach).
@@ -22,9 +22,7 @@ Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFil
 
 ## Architektura
 
-`index.js` składa całość: helmet (bez CSP), `express.static('public')`, morgan, rate limiter (tylko w produkcji), timeout, geoblock, potem routery i obsługa błędów.
-
-- `middlewares/geoblock.js`: blokuje ruch z Ukrainy na dwóch sygnałach: język `uk` w `Accept-Language` oraz kraj `UA` z GeoIP (`tcpClient.geoCheck`). Renderuje dedykowaną stronę `views/blocked.ejs` ze statusem 403. Static jest serwowany przed blokadą; przy niedostępności usługi TCP blokada po kraju przepuszcza ruch (fail-open).
+`index.js` składa całość: helmet (bez CSP), `express.static('public')`, morgan, rate limiter (tylko w produkcji), timeout, potem routery i obsługa błędów.
 
 - `routes/Pages.js`: strony statyczne. `/` renderuje `views/index.ejs`, `/discord` przekierowuje na zaproszenie Discord (celowo `discord.com/invite` zamiast `discord.gg`, żeby uniknąć łańcucha przekierowań).
 - `routes/Api.js`: `/api/v1/discord-stats`, jedyny endpoint API. Dane z `services/discordInvite.js` (invite API Discorda) z 60-sekundowym cache w pamięci procesu, plus `Cache-Control: public, max-age=60` na odpowiedzi. Liczby członków/online są przybliżone (approximate_* z API).
