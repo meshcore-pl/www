@@ -1,6 +1,6 @@
 import { getPage, hasPage } from './lib/page.js';
 
-const DOCS_PREFIX = /^\/dokumentacja(\/|$)/;
+const DOCS_PAGE = /^\/dokumentacja\/[^/]+\/[^/]+\/?$/;
 
 const view = document.getElementById('docs-view');
 
@@ -68,6 +68,7 @@ const swapView = async html => {
 
 const navigate = async (href, { push = true } = {}) => {
 	const url = new URL(href, location.href);
+	const fallback = () => (push ? (location.href = url.href) : location.reload());
 
 	controller?.abort();
 	const ac = new AbortController();
@@ -76,7 +77,7 @@ const navigate = async (href, { push = true } = {}) => {
 	try {
 		const res = await fetch(url.href, { signal: ac.signal, headers: { 'X-Docs-Fetch': '1' } });
 		if (!res.ok || !(res.headers.get('content-type') || '').includes('application/json')) {
-			location.href = url.href;
+			fallback();
 			return;
 		}
 
@@ -96,7 +97,7 @@ const navigate = async (href, { push = true } = {}) => {
 	} catch (err) {
 		if (err.name === 'AbortError') return;
 		console.error('[docs-router] navigation failed, falling back to a full reload', err);
-		location.href = url.href;
+		fallback();
 	} finally {
 		if (controller === ac) controller = null;
 	}
@@ -112,7 +113,7 @@ document.addEventListener('click', e => {
 	if (a.hasAttribute('download')) return;
 
 	const url = new URL(a.href, location.href);
-	if (url.origin !== location.origin || !DOCS_PREFIX.test(url.pathname)) return;
+	if (url.origin !== location.origin || !DOCS_PAGE.test(url.pathname)) return;
 	if (url.pathname === location.pathname && url.search === location.search && url.hash) return;
 
 	e.preventDefault();

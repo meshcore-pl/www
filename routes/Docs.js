@@ -4,16 +4,7 @@ const docs = require('../services/docs.js');
 
 const siteUrl = process.env.DOMAIN.replace(/\/+$/, '');
 
-const renderDocs = (req, res, fullView, partialView, locals) => {
-	if (req.get('X-Docs-Fetch') !== '1') return res.render(fullView, locals);
-
-	res.render(partialView, locals, (err, html) => {
-		if (err) return res.status(500).end();
-		res.json({ title: locals.title, description: locals.description, canonicalUrl: locals.canonicalUrl, html });
-	});
-};
-
-router.get('/dokumentacja', (req, res) => renderDocs(req, res, 'docs/index.ejs', 'docs/_index-content.ejs', {
+router.get('/dokumentacja', (req, res) => res.render('docs/index.ejs', {
 	siteUrl,
 	canonicalUrl: `${siteUrl}/dokumentacja`,
 	title: 'Dokumentacja - MeshCore Polska',
@@ -25,7 +16,7 @@ router.get('/dokumentacja/:group', (req, res) => {
 	const group = docs.getGroup(req.params.group);
 	if (!group) return RenderError(res, 404);
 
-	renderDocs(req, res, 'docs/group.ejs', 'docs/_group-content.ejs', {
+	res.render('docs/group.ejs', {
 		siteUrl,
 		canonicalUrl: `${siteUrl}/dokumentacja/${group.slug}`,
 		title: `${group.title} - Dokumentacja MeshCore Polska`,
@@ -42,7 +33,7 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 	const page = docs.getPage(req.params.group, req.params.slug);
 	if (!page) return RenderError(res, 404);
 
-	renderDocs(req, res, 'docs/page.ejs', 'docs/_page-content.ejs', {
+	const locals = {
 		siteUrl,
 		canonicalUrl: `${siteUrl}/dokumentacja/${group.slug}/${page.slug}`,
 		title: `${page.title} - ${group.title} - MeshCore Polska`,
@@ -50,6 +41,13 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 		groups: docs.groups,
 		group,
 		page,
+	};
+
+	if (req.get('X-Docs-Fetch') !== '1') return res.render('docs/page.ejs', locals);
+
+	res.render('docs/_page-content.ejs', locals, (err, html) => {
+		if (err) return res.status(500).end();
+		res.json({ title: locals.title, description: locals.description, canonicalUrl: locals.canonicalUrl, html });
 	});
 });
 

@@ -4,10 +4,35 @@
 	pageStyle: 'docs',
 }) %>
 
-<main id="docs-view" tabindex="-1">
-	<%- include('./_index-content.ejs', { groups }) %>
-</main>
+<main>
+	<section class="docs-hero">
+		<div class="section__inner">
+			<p class="eyebrow">Dokumentacja</p>
+			<h1>Dokumentacja MeshCore Polska</h1>
+			<p class="docs-hero__lead">Wszystko o naszym serwerze Discord oraz poradniki związane z siecią MeshCore, w jednym miejscu.</p>
+		</div>
+	</section>
 
-<script type="module" src="/js/docs-router.js"></script>
+	<section class="section">
+		<div class="section__inner">
+			<div class="docs-groups">
+				<% groups.forEach(group => { %>
+				<a href="/dokumentacja/<%= group.slug %>" class="docs-group-card">
+					<div class="docs-group-card__icon">
+						<% if (group.icon.startsWith('/')) { %><img src="<%= group.icon %>" alt="" width="40" height="40" loading="lazy"><% } else { %><%= group.icon %><% } %>
+					</div>
+					<div class="docs-group-card__body">
+						<div class="docs-group-card__head">
+							<h2><%= group.title %></h2>
+							<span class="docs-group-card__badge"><%= group.pages.length %> <%= group.pages.length === 1 ? 'strona' : 'strony' %></span>
+						</div>
+						<p><%= group.description %></p>
+					</div>
+				</a>
+				<% }) %>
+			</div>
+		</div>
+	</section>
+</main>
 
 <%- include('../includes/footer.ejs') %>
