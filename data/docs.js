@@ -1,7 +1,7 @@
 module.exports = [
 	// {
 	// 	slug: 'meshcore',
-	// 	icon: '/images/meshcore/logo-180.jpg',
+	// 	icon: '/images/meshcore/app-180.jpg',
 	// 	title: 'Poradniki MeshCore',
 	// 	description: 'Sprzęt, anteny i komendy CLI, czyli jak zacząć budować sieć mesh. Buduj zdecentralizowane sieci mesh i wysyłaj wiadomości drogą radiową. Bez internetu, bez zasięgu komórkowego.',
 	// 	pages: [
