@@ -183,9 +183,13 @@
 	display: block;
 }
 
-.about__caption {
+.about__caption,
+.profile__caption {
 	margin: 0.9rem 0 0;
 	font-family: var(--font-mono);
+}
+
+.about__caption {
 	font-size: 0.72rem;
 	letter-spacing: 0.03em;
 	line-height: 1.7;
@@ -456,8 +460,6 @@
 }
 
 .profile__caption {
-	margin: 0.9rem 0 0;
-	font-family: var(--font-mono);
 	font-size: 0.68rem;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
@@ -608,6 +610,11 @@ a[data-lightbox] {
 	.profile {
 		grid-template-columns: 1fr;
 		gap: 2.75rem;
+	}
+
+	.about__caption,
+	.profile__caption {
+		text-align: center;
 	}
 
 	.section__head {

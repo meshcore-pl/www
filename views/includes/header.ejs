@@ -1,6 +1,7 @@
 <!DOCTYPE html> <!-- Copyright 2026 © by Sefinek. All Rights Reserved. -->
 <html lang="pl">
 <head>
+	<% const _basePath = locals.canonical || '/'; %>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="color-scheme" content="dark">
@@ -8,7 +9,7 @@
 
 	<!-- Primary meta -->
 	<meta name="description" content="<%= description %>">
-	<link rel="canonical" href="<%= canonicalUrl %>">
+	<% if (locals.canonical) { %><link rel="canonical" href="<%= domain %><%= _basePath %>"><% } %>
 	<meta name="theme-color" content="#0a0c11">
 
 	<!-- JavaScript -->
@@ -24,8 +25,8 @@
 	<meta property="og:locale" content="pl_PL">
 	<meta property="og:title" content="<%= title %>">
 	<meta property="og:description" content="<%= description %>">
-	<meta property="og:url" content="<%= canonicalUrl %>">
-	<meta property="og:image" content="<%= siteUrl %>/images/brand/banner-og.jpg">
+	<meta property="og:url" content="<%= domain %><%= _basePath %>">
+	<meta property="og:image" content="<%= domain %>/images/brand/banner-og.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="675">
 	<meta property="og:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
@@ -34,7 +35,7 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="<%= title %>">
 	<meta name="twitter:description" content="<%= description %>">
-	<meta name="twitter:image" content="<%= siteUrl %>/images/brand/banner-og.jpg">
+	<meta name="twitter:image" content="<%= domain %>/images/brand/banner-og.jpg">
 	<meta name="twitter:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
 
 	<!-- Icons & manifest -->
@@ -56,15 +57,15 @@
 				"@type": "Organization",
 				"name": "MeshCore Polska",
 				"description": "Pierwsza ogólnopolska społeczność skupiona wokół sieci mesh MeshCore, czyli komunikacji radiowej LoRa działającej bez internetu i GSM.",
-				"url": "<%= siteUrl %>/",
-				"logo": "<%= siteUrl %>/images/brand/logo-3-192.png",
+				"url": "<%= domain %>/",
+				"logo": "<%= domain %>/images/brand/logo-3-192.png",
 				"email": "contact@sefinek.net",
-				"sameAs": ["<%= siteUrl %>/discord", "https://github.com/meshcore-pl"]
+				"sameAs": ["<%= domain %>/discord", "https://github.com/meshcore-pl"]
 			},
 			{
 				"@type": "WebSite",
 				"name": "MeshCore Polska",
-				"url": "<%= siteUrl %>/",
+				"url": "<%= domain %>/",
 				"inLanguage": "pl-PL"
 			}
 		]
@@ -86,8 +87,9 @@
 				<a href="https://map.meshcore.io/?zoom=7&amp;lat=52.2893&amp;lon=19.1162" class="nav__link" target="_blank" rel="noopener">Mapa węzłów</a>
 				<a href="https://flasher.meshcore.io/" class="nav__link" target="_blank" rel="noopener">Flasher</a>
 				<a href="https://www.dxinfocentre.com/tropo_eur.html" class="nav__link" target="_blank" rel="noopener">Propagacja</a>
+				<a href="/discord" class="btn btn--primary nav__links-cta" target="_blank" rel="noopener">Serwer Discord</a>
 			</nav>
-			<a href="/discord" class="btn btn--primary btn--sm" target="_blank" rel="noopener">Serwer Discord</a>
+			<a href="/discord" class="btn btn--primary btn--sm nav__cta" target="_blank" rel="noopener">Serwer Discord</a>
 			<button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
 			</button>

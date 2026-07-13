@@ -20,6 +20,7 @@ const app = express();
 // Configure the app
 if (isProd) app.set('trust proxy', 1);
 app.set('view engine', 'ejs');
+app.locals.domain = process.env.DOMAIN;
 
 // Use middlewares
 app.use(helmet({ crossOriginResourcePolicy: false, contentSecurityPolicy: false }));

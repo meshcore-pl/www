@@ -12,7 +12,7 @@ Strona [meshcorepolska.org](https://meshcorepolska.org), czyli polska społeczno
 node index.js
 ```
 
-Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `DISCORD_INVITE_CODE`. `DOMAIN` to pełny adres strony z protokołem, używany też w canonicalach i tagach OG.
+Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `DISCORD_INVITE_CODE`. `DOMAIN` to pełny adres strony z protokołem, bez ukośnika na końcu; przypisywany raz przy starcie do `app.locals.domain` i stamtąd widoczny we wszystkich widokach (canonicale, tagi OG).
 
 - Brak kroku budowania. Frontend to czysty CSS i JS serwowane bezpośrednio z `public/`.
 - Brak testów (skrypt `npm test` odwołuje się do jesta, którego nie ma w zależnościach).
@@ -22,12 +22,12 @@ Wymaga pliku `.env` (wzór w `.env.default`; ładowany przez `process.loadEnvFil
 
 ## Architektura
 
-`index.js` składa całość: helmet (bez CSP), `express.static('public')`, morgan, rate limiter (tylko w produkcji), timeout, potem routery i obsługa błędów.
+`index.js` składa całość: helmet (bez CSP), `express.static('public')`, morgan, rate limiter (tylko w produkcji), timeout, potem routery i obsługa błędów. `app.locals.domain` ustawiany raz przy starcie.
 
 - `routes/Pages.js`: strony statyczne. `/` renderuje `views/index.ejs`, `/discord` przekierowuje na zaproszenie Discord (celowo `discord.com/invite` zamiast `discord.gg`, żeby uniknąć łańcucha przekierowań).
 - `routes/Api.js`: `/api/v1/discord-stats`, jedyny endpoint API. Dane z `services/discordInvite.js` (invite API Discorda) z 60-sekundowym cache w pamięci procesu, plus `Cache-Control: public, max-age=60` na odpowiedzi. Liczby członków/online są przybliżone (approximate_* z API).
-- `utils/renderError.js`: wszystkie błędy (404/429/500/503) renderują `views/error.ejs` z polskim komunikatem.
-- Widoki: `views/includes/header.ejs` przyjmuje `title`, `description` i opcjonalny `pageStyle` (dołącza `/css/<pageStyle>.css`); strony przekazują też `siteUrl` i `canonicalUrl` (routing musi je dostarczyć do `res.render`).
+- `utils/renderError.js`: wszystkie błędy (404/429/500/503) renderują `views/error.ejs` z polskim komunikatem; `title`/`description` liczone są w samym widoku na podstawie `status`, bez `canonical` (strony błędów nie mają linku kanonicznego).
+- Widoki: `views/includes/header.ejs` przyjmuje `title`, `description`, opcjonalny `canonical` (ścieżka względna, np. `/dokumentacja`; brak = brak `<link rel="canonical">`) i opcjonalny `pageStyle` (dołącza `/css/<pageStyle>.css`). `domain` pochodzi z `app.locals` (ustawiony raz w `index.js`, widoczny automatycznie wszędzie, bez przeliczania na każdy request). `title`/`description`/`canonical` są statyczne albo liczone w samym widoku na podstawie już przekazanych danych (`index.ejs`, `error.ejs`, `docs/index.ejs`, `docs/group.ejs` z `group.slug`) — wyjątkiem jest `routes/Docs.js` dla pojedynczej strony dokumentacji, gdzie muszą zostać policzone w trasie, bo trafiają też do odpowiedzi JSON używanej przez `docs-router.js`.
 - `public/js/mesh-map.js`: animowana mapa Polski na canvasie w hero (kontur kraju z geoBoundaries uproszczony do 300 punktów, deterministyczny PRNG z seedem, graf węzłów z gwarancją spójności, krawędzie testowane na przecięcie z granicą). Zmiana układu siatki = zmiana seeda w `mulberry32(...)`.
 - `public/js/index.js`: pobiera statystyki Discorda i odsłania widget w hero strony głównej.
 - `public/js/lightbox.js`: powiększanie obrazów w overlayu; podpina się pod każdy link `a[data-lightbox]`.

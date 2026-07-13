@@ -1,6 +1,12 @@
+<%
+const title = `${group.title} - Dokumentacja MeshCore Polska`;
+const description = group.description;
+const canonical = `/dokumentacja/${group.slug}`;
+%>
 <%- include('../includes/header.ejs', {
 	title,
 	description,
+	canonical,
 	pageStyle: 'docs',
 }) %>
 
