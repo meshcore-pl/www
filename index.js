@@ -1,6 +1,7 @@
 process.loadEnvFile();
 const express = require('express');
 const helmet = require('helmet');
+const isProd = process.env.NODE_ENV === 'production';
 
 // Routes
 const PagesRouter = require('./routes/Pages.js');
@@ -17,14 +18,14 @@ const RenderError = require('./utils/renderError.js');
 const app = express();
 
 // Configure the app
-app.set('trust proxy', 1);
+if (isProd) app.set('trust proxy', 1);
 app.set('view engine', 'ejs');
 
 // Use middlewares
 app.use(helmet({ crossOriginResourcePolicy: false, contentSecurityPolicy: false }));
 app.use(express.static('public'));
 app.use(logger);
-if (process.env.NODE_ENV === 'production') app.use(limiter);
+if (isProd) app.use(limiter);
 app.use(timeout());
 
 app.use('/', PagesRouter);
