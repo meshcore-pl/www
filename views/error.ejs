@@ -1,8 +1,8 @@
-<%
-const title = `Błąd ${status}: MeshCore Polska`;
-const description = 'Wystąpił błąd podczas ładowania strony MeshCore Polska.';
-%>
-<%- include('./includes/header.ejs', { title, description, pageStyle: 'error' }) %>
+<%- include('./includes/header.ejs', {
+	title: `Błąd ${status}: MeshCore Polska`,
+	description: 'Wystąpił błąd podczas ładowania strony MeshCore Polska.',
+	pageStyle: 'error'
+}) %>
 
 <main>
 	<section class="section section--notfound">
