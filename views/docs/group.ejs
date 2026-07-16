@@ -1,13 +1,10 @@
-<%
-const title = `${group.title} - Dokumentacja MeshCore Polska`;
-const description = group.description;
-const canonical = `/dokumentacja/${group.slug}`;
-%>
 <%- include('../includes/header.ejs', {
-	title,
-	description,
-	canonical,
-	pageStyle: 'docs',
+	title: `${group.title} - Dokumentacja MeshCore Polska`,
+	description: group.description,
+	keywords: `${group.title}, dokumentacja MeshCore Polska, MeshCore, LoRa`,
+	canonical: `/dokumentacja/${group.slug}`,
+	css: 'docs',
+	page: 'docs'
 }) %>
 
 <main>

@@ -1,7 +1,8 @@
 process.loadEnvFile();
 const express = require('express');
 const helmet = require('helmet');
-const isProd = process.env.NODE_ENV === 'production';
+const { DOMAIN, NODE_ENV, PORT } = process.env;
+const isProd = NODE_ENV === 'production';
 
 // Routes
 const PagesRouter = require('./routes/Pages.js');
@@ -20,7 +21,7 @@ const app = express();
 // Configure the app
 if (isProd) app.set('trust proxy', 1);
 app.set('view engine', 'ejs');
-app.locals.domain = process.env.DOMAIN;
+app.locals.domain = DOMAIN;
 
 // Use middlewares
 app.use(helmet({ crossOriginResourcePolicy: false, contentSecurityPolicy: false }));
@@ -33,11 +34,9 @@ app.use('/', PagesRouter);
 app.use('/', DocsRouter);
 app.use('/api/v1', APIRouter);
 
-
 // Error handling
 app.use((req, res) => RenderError(res, 404));
 app.use((err, req, res, _next) => RenderError(res, 500, err));
 
 // Start the server
-const { DOMAIN, PORT } = process.env;
 app.listen(PORT, () => process.send ? process.send('ready') : console.log(`Server running at ${DOMAIN}:${PORT}`));

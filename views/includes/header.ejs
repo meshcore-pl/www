@@ -7,8 +7,10 @@
 	<title><%= title %></title>
 
 	<!-- Primary meta -->
-	<meta name="description" content="<%= description %>">
-	<% if (locals.canonical) { %><link rel="canonical" href="<%= domain %><%= _basePath %>"><% } %>
+	<% if (locals.description) { %><meta name="description" content="<%= description %>"><% }
+	if (locals.keywords) { %><meta name="keywords" content="<%= keywords %>"><% }
+	if (locals.noindex) { %><meta name="robots" content="noindex, nofollow"><% }
+	if (locals.canonical) { %><link rel="canonical" href="<%= domain %><%= _basePath %>"><% } %>
 	<meta name="theme-color" content="#95010b">
 
 	<!-- JavaScript -->
@@ -19,7 +21,7 @@
 	<meta property="og:site_name" content="MeshCore Polska">
 	<meta property="og:locale" content="pl_PL">
 	<meta property="og:title" content="<%= title %>">
-	<meta property="og:description" content="<%= description %>">
+	<% if (locals.description) { %><meta property="og:description" content="<%= description %>"><% } %>
 	<meta property="og:url" content="<%= domain %><%= _basePath %>">
 	<meta property="og:image" content="<%= domain %>/images/brand/banner-og.jpg">
 	<meta property="og:image:width" content="1200">
@@ -29,7 +31,7 @@
 	<!-- Twitter / X Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="<%= title %>">
-	<meta name="twitter:description" content="<%= description %>">
+	<% if (locals.description) { %><meta name="twitter:description" content="<%= description %>"><% } %>
 	<meta name="twitter:image" content="<%= domain %>/images/brand/banner-og.jpg">
 	<meta name="twitter:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
 
@@ -45,7 +47,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="/css/global.css">
-	<% if (locals.pageStyle) { %><link rel="stylesheet" href="/css/<%= pageStyle %>.css"><% } %>
+	<% if (locals.css) { (Array.isArray(css) ? css : [css]).forEach(c => { %><link rel="stylesheet" href="/css/<%= c %>.css" data-page-css><% }) } %>
 
 	<!-- schema.org -->
 	<script type="application/ld+json">
@@ -71,7 +73,7 @@
 	}
 	</script>
 </head>
-<body>
+<body data-page="<%= locals.page || '' %>">
 <header class="nav">
 	<div class="nav__inner">
 		<a href="/" class="nav__brand">
