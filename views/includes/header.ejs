@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="color-scheme" content="dark">
 	<title><%= title %></title>
 
 	<!-- Primary meta -->
@@ -12,9 +11,6 @@
 	if (locals.noindex) { %><meta name="robots" content="noindex, nofollow"><% }
 	if (locals.canonical) { %><link rel="canonical" href="<%= domain %><%= _basePath %>"><% } %>
 	<meta name="theme-color" content="#95010b">
-
-	<!-- JavaScript -->
-	<script src="https://cdn.sefinek.net/js/progressbar.js"></script>
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
@@ -35,6 +31,9 @@
 	<meta name="twitter:image" content="<%= domain %>/images/brand/banner-og.jpg">
 	<meta name="twitter:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
 
+	<!-- JavaScript -->
+	<script src="https://cdn.sefinek.net/js/progressbar.js"></script>
+
 	<!-- Icons & manifest -->
 	<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
 	<link rel="icon" href="/images/brand/logo-3-192.png" type="image/png" sizes="192x192" >
@@ -44,7 +43,7 @@
 	<!-- Stylesheets -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="/css/global.css">
 	<% if (locals.css) { (Array.isArray(css) ? css : [css]).forEach(c => { %><link rel="stylesheet" href="/css/<%= c %>.css" data-page-css><% }) } %>
