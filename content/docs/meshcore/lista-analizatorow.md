@@ -8,6 +8,7 @@ description: Lista analizatorów.
 
 
 ## Regionalne
+- Piła: <a href="https://corescope.epila.pl" target="_blank" rel="noopener nofollow">corescope.epila.pl</a>
 - Kraków: <a href="https://meshcorekrk.cma.pl" target="_blank" rel="noopener nofollow">meshcorekrk.cma.pl</a>
 
 
