@@ -1,14 +1,13 @@
 module.exports = [
-	// {
-	// 	slug: 'meshcore',
-	// 	icon: '/images/meshcore/main-512.png',
-	// 	title: 'Poradniki MeshCore',
-	// 	description: 'Sprzęt, anteny i komendy CLI, czyli jak zacząć budować sieć mesh. Buduj zdecentralizowane sieci mesh i wysyłaj wiadomości drogą radiową. Bez internetu, bez zasięgu komórkowego.',
-	// 	pages: [
-	// 		{ slug: 'wprowadzenie', title: 'Wprowadzenie' },
-	// 		{ slug: 'anteny', title: 'Lista anten' },
-	// 	],
-	// },
+	{
+		slug: 'meshcore',
+		icon: '/images/meshcore/main-512.png',
+		title: 'Wszystko o MeshCore (w budowie)',
+		description: 'Sprzęt, anteny, komendy CLI, podstawy podstaw. Buduj zdecentralizowane sieci mesh i wysyłaj wiadomości drogą radiową. Bez internetu, bez zasięgu komórkowego.',
+		pages: [
+			{ slug: 'lista-analizatorów', title: 'Lista analizatorów' },
+		],
+	},
 	{
 		slug: 'discord',
 		icon: '/images/brand/logo-1.jpg',
