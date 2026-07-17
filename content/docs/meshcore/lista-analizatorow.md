@@ -5,12 +5,12 @@ description: Lista analizatorów.
 
 
 ## Lokalne
-- Kraków: <a href="https://meshcorekrk.cma.pl" target="_blank" rel="nofollow noopener">meshcorekrk.cma.pl</a>
+- Kraków: <a href="https://meshcorekrk.cma.pl" target="_blank" rel="noopener nofollow">meshcorekrk.cma.pl</a>
 
 
 ## Inne
-- Finlandia (Finland): <a href="https://corescope.meshcore.fi" target="_blank" rel="nofollow noopener">corescope.meshcore.fi</a>
-- Estonia: <a href="https://corescope.es5nhc.ee" target="_blank" rel="nofollow noopener">corescope.es5nhc.ee</a>
+- Finlandia (Finland): <a href="https://corescope.meshcore.fi" target="_blank" rel="noopener nofollow">corescope.meshcore.fi</a>
+- Estonia: <a href="https://corescope.es5nhc.ee" target="_blank" rel="noopener nofollow">corescope.es5nhc.ee</a>
 
 
 <br><br><br>
