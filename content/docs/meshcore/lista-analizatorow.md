@@ -1,6 +1,6 @@
 ---
-title: Lista analizatorów
-description: Lista analizatorów.
+title: Analizatory MeshCore w Polsce
+description: Lista publicznych analizatorów sieci MeshCore w Polsce i Europie. Znajdź globalne, regionalne i zagraniczne instancje CoreScope do monitorowania sieci.
 ---
 
 ## Globalne
@@ -8,6 +8,7 @@ description: Lista analizatorów.
 
 
 ## Regionalne
+- Piła: <a href="https://corescope.epila.pl" target="_blank" rel="noopener nofollow">corescope.epila.pl</a>
 - Kraków: <a href="https://meshcorekrk.cma.pl" target="_blank" rel="noopener nofollow">meshcorekrk.cma.pl</a>
 
 
