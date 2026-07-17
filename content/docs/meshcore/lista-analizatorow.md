@@ -3,8 +3,11 @@ title: Lista analizatorów
 description: Lista analizatorów.
 ---
 
+## Globalne
+-  <a href="https://analyzer.marwoj.net" target="_blank" rel="noopener nofollow">analyzer.marwoj.net</a>
 
-## Lokalne
+
+## Regionalne
 - Kraków: <a href="https://meshcorekrk.cma.pl" target="_blank" rel="noopener nofollow">meshcorekrk.cma.pl</a>
 
 
