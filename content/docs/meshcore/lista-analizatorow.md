@@ -10,6 +10,7 @@ description: Lista analizatorów.
 
 ## Inne
 - Finlandia (Finland): <a href="https://corescope.meshcore.fi" target="_blank" rel="nofollow noopener">corescope.meshcore.fi</a>
+- Estonia: <a href="https://corescope.es5nhc.ee" target="_blank" rel="nofollow noopener">corescope.es5nhc.ee</a>
 
 
 <br><br><br>
