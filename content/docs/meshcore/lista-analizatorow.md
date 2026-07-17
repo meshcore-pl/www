@@ -18,4 +18,4 @@ description: Lista publicznych analizatorów sieci MeshCore w Polsce i Europie. 
 
 
 <br><br><br>
-Propozycje proszę kierować na Discordzie lub contact@sefinek.net.
+Sugestie proszę kierować na Discordzie lub contact@sefinek.net.
