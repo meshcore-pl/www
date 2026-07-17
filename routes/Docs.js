@@ -20,7 +20,7 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 
 	const canonical = `/dokumentacja/${group.slug}/${page.slug}`;
 	const locals = {
-		title: `${page.title} - ${group.title} - MeshCore Polska`,
+		title: `${page.title} - MeshCore Polska`,
 		description: page.description || `${page.title} - dokumentacja MeshCore Polska.`,
 		canonical,
 		groups: docs.groups,
