@@ -1,6 +1,6 @@
 ---
 title: Wprowadzenie
-description: Czym jest MeshCore i jak zacząć.
+description: Czym jest Noise Floor w MeshCore, jak znaleźć źródło zakłóceń i kiedy zastosować filtr.
 ---
 
 W trakcie budowy.
@@ -35,9 +35,9 @@ Częstotliwość, na której działamy (869,618 MHz), znajduje się pomiędzy pa
 Duża liczba pobliskich BTS-ów również może mieć wpływ na NF.
 
 ### Jak znaleźć źródło zakłóceń?
-Zacznij od przeniesienia płytki w inne miejsce. Jeśli możesz, zasil ją z ogniwa lub powerbanka i odłączaj po kolei elektronikę znajdującą się w pobliżu.
+Zacznij od przeniesienia płytki w inne miejsce. Jeżeli jest to możliwe, zasil ją bezpośrednio z ogniwa (np. 18650) i odłączaj po kolei elektronikę znajdującą się w pobliżu.
 Po każdej zmianie sprawdź NF ponownie. W ten sposób szybko ustalisz, czy problem jest lokalny.
-Jeśli zasilasz płytke przez PoE, częstym powodem może okazać się i nawet sam splitter.
+Jeśli zasilasz płytkę przez PoE, częstym powodem może okazać się nawet sam splitter.
 
 ### Kiedy filtr ma sens?
 Filtr może pomóc, gdy odbiornik jest zagłuszany przez silne sygnały spoza naszej częstotlwiości. Pamiętaj, że nie usunie on zakłóceń występujących dokładnie na 869,618 MHz.
@@ -45,8 +45,8 @@ Najpierw zmień lokalizację i wyklucz pobliską elektronikę, a dopiero potem k
 
 ### Polecane filtry
 1. [Goły filtr](https://pl.aliexpress.com/item/1005007438690164.html) - tania opcja. Płytkę można dodatkowo zabezpieczyć np. kolejną warstwą termokurczu.
-2. [Filtr z obudową](https://pl.aliexpress.com/item/1005007509062592.html) - zalecana opcja, jeśli budżet nie boli. NF raczej stosunkowo się nie poprawi względem pierwszej propozycji, aczkolwiek możliwe że filtr w takiej wersji przetrwa znacznie dłużej.
+2. [Filtr z obudową](https://pl.aliexpress.com/item/1005007509062592.html) - zalecana opcja, jeśli budżet nie boli. NF raczej stosunkowo się nie poprawi względem pierwszej propozycji, aczkolwiek możliwe, że filtr w takiej wersji przetrwa znacznie dłużej.
 
-### Mam filtr, co dalej? WAŻNE!
-Przedewszystkim uważaj, żeby go nie spalić. Maksymalna moc obciążenia większości tych filtrów to 20dBm (100mw). Przed zainstalowaniem filtra, koniecznie zmniejsz moc nadawania na właśnie 20dBm.
+### Mam filtr, co dalej? Ważne!
+Przed podłączeniem koniecznie sprawdź maksymalną dopuszczalną moc wejściową filtra. Jeśli wynosi ona 20 dBm (100 mW), ustaw moc nadawania na nie więcej niż 20 dBm. Przekroczenie tej wartości może uszkodzić filtr.
 Niestety coś kosztem czegoś.
