@@ -15,7 +15,7 @@ node index.js
 Wymaga pliku `.env` (wzór w `.env.example`; ładowany przez `process.loadEnvFile()`, nie dotenv). Zmienne: `NODE_ENV`, `DOMAIN`, `PORT`, `DISCORD_INVITE_CODE`. `DOMAIN` to pełny adres strony z protokołem, bez ukośnika na końcu; przypisywany raz przy starcie do `app.locals.domain` i stamtąd widoczny we wszystkich widokach (canonicale, tagi OG).
 
 - Brak kroku budowania. Frontend to czysty CSS i JS serwowane bezpośrednio z `public/`.
-- Brak testów (skrypt `npm test` odwołuje się do jesta, którego nie ma w zależnościach).
+- Brak testów (`package.json` nie ma skryptu `test`).
 - Lint: `npx eslint .` (flat config w `eslint.config.mjs`; eslint nie jest w devDependencies).
 - Produkcja: PM2, aplikacja nazywa się `mcpl` (`ecosystem.config.js`). Deploy: `npm run update` (pull + `npm ci --omit=dev` + `pm2 restart mcpl`). Serwer po starcie wysyła `process.send('ready')` (PM2 `wait_ready`).
 - `services/IndexNow.js` to samodzielny skrypt (nie route) do ręcznego zgłaszania URL-i z `public/sitemap.xml` do IndexNow; wymaga pliku klucza w `public/`.
