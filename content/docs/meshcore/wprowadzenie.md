@@ -43,7 +43,7 @@ Jeśli zasilasz płytkę przez PoE, częstym powodem może okazać się nawet sa
 Filtr może pomóc, gdy odbiornik jest zagłuszany przez silne sygnały spoza naszej częstotlwiości. Pamiętaj, że nie usunie on zakłóceń występujących dokładnie na 869,618 MHz.
 Najpierw zmień lokalizację i wyklucz pobliską elektronikę, a dopiero potem kupuj filtr.
 
-### Polecane filtry
+### Polecane filtry BPF
 1. [Goły filtr](https://pl.aliexpress.com/item/1005007438690164.html) - tania opcja. Płytkę można dodatkowo zabezpieczyć np. kolejną warstwą termokurczu.
 2. [Filtr z obudową](https://pl.aliexpress.com/item/1005007509062592.html) - zalecana opcja, jeśli budżet nie boli. NF raczej stosunkowo się nie poprawi względem pierwszej propozycji, aczkolwiek możliwe, że filtr w takiej wersji przetrwa znacznie dłużej.
 
