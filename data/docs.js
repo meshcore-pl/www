@@ -6,6 +6,7 @@ module.exports = [
 		description: 'Sprzęt, anteny, komendy CLI, podstawy podstaw. Buduj zdecentralizowane sieci mesh i wysyłaj wiadomości drogą radiową. Bez internetu, bez zasięgu komórkowego.',
 		pages: [
 			{ slug: 'wprowadzenie', title: 'Wprowadzenie' },
+			{ slug: 'anteny', title: 'Spis anten' },
 			{ slug: 'lista-analizatorow', title: 'Lista analizatorów' },
 		],
 	},
