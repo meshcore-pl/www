@@ -22,7 +22,7 @@ Jeśli chcesz dołożyć swoją cegiełkę do tego projektu, albo po prostu popr
    ```bash
    nano .env
    ```
-5. Uruchom aplikację. CTRL^C aby zakończyć. 
+5. Uruchom aplikację. `CTRL^C` aby zakończyć.
    ```bash
    node .
    ```
