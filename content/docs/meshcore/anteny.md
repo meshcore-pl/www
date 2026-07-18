@@ -20,7 +20,7 @@ Spis anten, których używamy lub używaliśmy. Polecamy te od GIZONT-a. Nie wie
 ## Pod repeatery
 1. [AliExpress](https://pl.aliexpress.com/item/1005007463706065.html) `(zysk 8 dBi)` - znakomita pod RPT, wykręciliśmy na niej ponad 10 km (companion w aucie, antena nr 1 z listy powyżej). Istnieje jeszcze [taka podobna](https://pl.aliexpress.com/item/1005006109449349.html), aczkolwiek nie mieliśmy jej w łapach. Bierz wersję 55 cm. Napisz do sprzedającego, że chcesz biały kolor. Pod żadnym pozorem nie bierz czarnej. Biała lepiej odbija promienie słoneczne i mniej się nagrzewa.
 2. [Allegro](https://allegro.pl/oferta/antena-dipol-atk-10-800-980-mhz-12-8-dbi-lte900-do-licznikow-energii-7339950391) `(ATK-10, zysk 12,8 dBi)` - znakomita antena kierunkowa. Pamiętaj, że ATK-10 nadaje też trochę na boki. Istnieje również ATK-20, która ma większy zysk, ale za to jest jeszcze większa.
-    - [Allegro](https://allegro.pl/oferta/przewod-antenowy-gsm-wlan-lte-50-om-tri-lan-240-1m-8383105296) - koncentryk, około 30-40 cm powinno wystarczyć.
+    - [Allegro](https://allegro.pl/oferta/przewod-antenowy-gsm-wlan-lte-50-om-tri-lan-240-1m-8383105296) - koncentryk, około 35-45 cm powinno wystarczyć.
     - [Allegro](https://allegro.pl/oferta/wtyk-n-zaciskany-na-przewod-rf-5-tri-lan-240-h-155-zloty-18298610874) - wtyk N na koncentryk.
 3. [AliExpress](https://pl.aliexpress.com/item/1005005869328733.html) `(zysk 7 dBi)` - mniejsza antena kierunkowa, jeśli np. przeszkadza Ci wielkość ATK-10. Ona również nadaje trochę na boki, ale mniej niż ATK-10 - zdecydowanie mniej wydajna.
 
