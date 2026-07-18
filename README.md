@@ -16,7 +16,7 @@ Jeśli chcesz dołożyć swoją cegiełkę do tego projektu, albo po prostu popr
    ```
 3. Utwórz plik konfiguracyjny na podstawie wzoru `.env.example`.
    ```bash
-   cp .env.default .env
+   cp .env.example .env
    ```
 4. Uzupełnij zmienne środowiskowe w pliku `.env`.
    ```bash
