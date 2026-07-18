@@ -1,11 +1,11 @@
 ---
-title: Grafiki serwera
+title: Nasze logo
 description: Loga i bannery serwera Discord MeshCore Polska.
 ---
 
-# Grafiki serwera
+# Nasze logo
 Loga i bannery serwera MeshCore Polska możesz pobierać i używać swobodnie.
-Pilnuj tylko jednego: nie używaj ich tak, żeby wyglądało, że reprezentujesz projekt MeshCore albo administrację serwera, jeśli nie masz na to zgody.
+Nie używaj ich tak, żeby wyglądało, że reprezentujesz projekt MeshCore albo administrację serwera, jeśli nie masz na to zgody.
 
 ## Loga
 

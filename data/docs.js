@@ -2,8 +2,8 @@ module.exports = [
 	{
 		slug: 'meshcore',
 		icon: '/images/meshcore/main-512.png',
-		title: 'Wszystko o MeshCore (w budowie)',
-		description: 'Sprzęt, anteny, komendy CLI, podstawy podstaw. Buduj zdecentralizowane sieci mesh i wysyłaj wiadomości drogą radiową. Bez internetu, bez zasięgu komórkowego.',
+		title: 'Wszystko o MeshCore',
+		description: 'Sprzęt, anteny, komendy CLI, podstawy podstaw. Buduj zdecentralizowane sieci mesh i wysyłaj wiadomości drogą radiową. Bez internetu, bez zasięgu komórkowego. Dokumentacja nadal w trakcie prac.',
 		pages: [
 			{ slug: 'wprowadzenie', title: 'Wprowadzenie' },
 			{ slug: 'anteny', title: 'Spis anten' },
@@ -18,7 +18,7 @@ module.exports = [
 		pages: [
 			{ slug: 'wprowadzenie', title: 'Wprowadzenie' },
 			{ slug: 'regulamin', title: 'Regulamin serwera' },
-			{ slug: 'grafiki-serwera', title: 'Grafiki serwera' },
+			{ slug: 'nasze-logo', title: 'Nasze logo' },
 		],
 	},
 ];
