@@ -14,7 +14,7 @@ Jeśli chcesz dołożyć swoją cegiełkę do tego projektu, albo po prostu popr
    ```bash
    cd meshcorepolska.org && npm install
    ```
-3. Utwórz plik konfiguracyjny na podstawie wzoru `.env.default`.
+3. Utwórz plik konfiguracyjny na podstawie wzoru `.env.example`.
    ```bash
    cp .env.default .env
    ```
