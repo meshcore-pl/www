@@ -32,5 +32,5 @@ Spis anten których używamy/używaliśmy. Polecamyte od GIZONT-a. Nie wierz w p
 Nigdy nie używaj pigtaila `1.13 Cable`, on ma taki czarny kolor izolacji. Więcej strat w TX niż pożytku. Używaj `RG178`. Ogólnie jest jeszcze lepsza wersja - `RG316`. Natomiast Chińczyki takich kabli ze złączem `RF-1` nie produkują - bo nie jest to standard. Natomiast jeśli Chińczykowi na AliExpress napiszesz, to ci go zrobi. Ostrzegam: nie będzie ten pigtail mocno elastyczny. W niektórych przypadkach złącze `RF-1` może samo ci się odpiąć od płytki. W każdym razie i tak zalecam `RG178`.
 
 ## Filtry BPF
-Używaj ich wyłącznie gdy masz bardzo niski NF. Więcej informacji na ich temat uzyskasz [tutaj](https://meshcorepolska.org/dokumentacja/meshcore/wprowadzenie#kiedy-filtr-ma-sens). 
+Używaj ich wyłącznie gdy masz bardzo niski NF. Więcej informacji na ich temat uzyskasz [tutaj](https://meshcorepolska.org/dokumentacja/meshcore/wprowadzenie#noise-floor---czym-jest). 
 
