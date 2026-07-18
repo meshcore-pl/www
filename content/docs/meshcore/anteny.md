@@ -24,12 +24,16 @@ Spis anten, których używamy lub używaliśmy. Polecamy te od GIZONT-a. Nie wie
     - [Allegro](https://allegro.pl/oferta/wtyk-n-zaciskany-na-przewod-rf-5-tri-lan-240-h-155-zloty-18298610874) - wtyk N na koncentryk.
 3. [AliExpress](https://pl.aliexpress.com/item/1005005869328733.html) `(zysk 7 dBi)` - mniejsza antena kierunkowa, jeśli np. przeszkadza Ci wielkość ATK-10. Ona również nadaje trochę na boki, ale mniej niż ATK-10 - zdecydowanie mniej wydajniejsza
 
-## Pod BLE
-1. [AliExpress](https://pl.aliexpress.com/item/1005009684416243.html) - taka mi wystarczyła, można wybrać długość przewodu. Przykleiłem ją od spodu puszki. Nie widzę sensu robić inaczej.
+## Pod Bluetooth (BLE)
+1. [AliExpress](https://pl.aliexpress.com/item/1005009684416243.html) - taka w zupełności wystarczy, można wybrać długość przewodu. Najlepiej przykleić ją od spodu puszki.
 2. [AliExpress](https://pl.aliexpress.com/item/1005008294463974.html) - plastikowa, w większości przypadków powinna być OK.
 
-## Zalecenia przewodów
-Nigdy nie używaj pigtaila `1.13 Cable`, ma on czarną izolację. Więcej strat w TX niż pożytku. Używaj `RG178`. Jest jeszcze lepsza wersja, czyli `RG316`. Chińczycy nie produkują jednak takich kabli ze złączem `RF-1`, bo nie jest to standardowa konfiguracja. Jeśli napiszesz do sprzedawcy na AliExpress, powinien zrobić go na zamówienie. Ostrzegam: taki pigtail nie będzie zbyt elastyczny. W niektórych przypadkach złącze `RF-1` może samo odpiąć się od płytki. W każdym razie i tak zalecam `RG178`.
+## Zalecenia dotyczące przewodu antenowego
+Nigdy nie używaj `1.13 Cable` (one mają czarną izolacje). Więcej strat w TX niż pożytku. Używaj `RG178`.
+Jest jeszcze lepsza wersja, czyli `RG316`. Chińczycy nie produkują jednak takich kabli ze złączem `RF-1`, bo nie jest to standardowa konfiguracja.
+Jeśli napiszesz do sprzedawcy na AliExpress, powinien zrobić Ci taki kabel na zamówienie.
+Uwaga: taki pigtail nie będzie zbyt elastyczny. W niektórych przypadkach złącze `RF-1` może samo odpiąć się od płytki. W każdym razie i tak zalecamy `RG178` - w większości przypadków nie ma sensu kombinować.
+Mimo wszystko jeśli wybierzesz `RG316`, musisz być świadomy tego co robisz.
 
 ## Filtry BPF
-Używaj ich wyłącznie wtedy, gdy masz bardzo wysoki NF. Więcej informacji na ich temat znajdziesz [tutaj](/dokumentacja/meshcore/wprowadzenie#noise-floor---czym-jest).
+Używaj ich wyłącznie wtedy, gdy masz bardzo wysoki NF. Więcej informacji na ich temat znajdziesz [tutaj](https://meshcorepolska.org/dokumentacja/meshcore/wprowadzenie#noise-floor---czym-jest).
