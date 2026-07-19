@@ -2,7 +2,7 @@ const animateCount = (el, target) => {
 	const duration = 900;
 	const start = performance.now();
 
-	const tick = (now) => {
+	const tick = now => {
 		const progress = Math.min((now - start) / duration, 1);
 		el.textContent = Math.round(target * progress).toLocaleString('pl-PL');
 		if (progress < 1) requestAnimationFrame(tick);

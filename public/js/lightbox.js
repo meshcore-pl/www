@@ -14,7 +14,7 @@ const initLightbox = () => {
 		overlay.hidden = true;
 	};
 
-	links.forEach((link) => {
+	links.forEach(link => {
 		link.addEventListener('click', e => {
 			e.preventDefault();
 			const thumb = link.querySelector('img');

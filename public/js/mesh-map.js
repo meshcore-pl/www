@@ -59,7 +59,7 @@
 		['TAR', 20.986, 50.013, true], ['ZAM', 23.252, 50.723],
 	];
 
-	const mulberry32 = (a) => () => {
+	const mulberry32 = a => () => {
 		a |= 0; a = a + 0x6D2B79F5 | 0;
 		let t = Math.imul(a ^ a >>> 15, 1 | a);
 		t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
@@ -80,8 +80,8 @@
 	const project = (lon, lat) => [lon * COS_LAT, -lat];
 
 	const projectedBorder = BORDER.map(([lon, lat]) => project(lon, lat));
-	const xs = projectedBorder.map((p) => p[0]);
-	const ys = projectedBorder.map((p) => p[1]);
+	const xs = projectedBorder.map(p => p[0]);
+	const ys = projectedBorder.map(p => p[1]);
 	const minX = Math.min(...xs), maxX = Math.max(...xs);
 	const minY = Math.min(...ys), maxY = Math.max(...ys);
 	const spanX = maxX - minX, spanY = maxY - minY;
@@ -126,7 +126,7 @@
 		}
 		if (!pointInPolygon(lon, lat, BORDER) || distToBorder(lon, lat) < 0.07) continue;
 		const [x, y] = normalize(project(lon, lat));
-		if (nodes.some((n) => Math.hypot(n.x - x, n.y - y) < 0.058)) continue;
+		if (nodes.some(n => Math.hypot(n.x - x, n.y - y) < 0.058)) continue;
 		nodes.push({ x, y, lon, lat, city: false });
 	}
 
@@ -172,7 +172,7 @@
 			const queue = [i];
 			componentOf[i] = count;
 			while (queue.length) {
-				adjacency[queue.pop()].forEach((n) => {
+				adjacency[queue.pop()].forEach(n => {
 					if (componentOf[n] === -1) {
 						componentOf[n] = count;
 						queue.push(n);
@@ -206,13 +206,13 @@
 	let width = 0, height = 0, scale = 1, offsetX = 0, offsetY = 0, dpr = 1;
 	let staticLayer = null;
 
-	const toPx = (n) => [offsetX + n.x * scale, offsetY + n.y * scale];
+	const toPx = n => [offsetX + n.x * scale, offsetY + n.y * scale];
 	const geoToPx = (lon, lat) => {
 		const [nx, ny] = normalize(project(lon, lat));
 		return [offsetX + nx * scale, offsetY + ny * scale];
 	};
 
-	const traceBorder = (c) => {
+	const traceBorder = c => {
 		c.beginPath();
 		borderPath.forEach(([nx, ny], i) => {
 			const x = offsetX + nx * scale, y = offsetY + ny * scale;
@@ -269,7 +269,7 @@
 		s.stroke();
 		s.restore();
 
-		nodes.forEach((node) => {
+		nodes.forEach(node => {
 			if (!node.city) return;
 			const [x, y] = toPx(node);
 			s.beginPath();
@@ -282,7 +282,7 @@
 		if (width >= 330) {
 			s.font = '600 10px "IBM Plex Mono", monospace';
 			s.fillStyle = 'rgba(153, 161, 181, 0.72)';
-			nodes.forEach((node) => {
+			nodes.forEach(node => {
 				if (!node.city) return;
 				const [x, y] = toPx(node);
 				const alignRight = node.x > 0.8;
@@ -315,7 +315,7 @@
 		let current = start;
 		const hops = Math.min(3 + Math.floor(Math.log(1 - Math.random()) / Math.log(0.6)), 12);
 		for (let h = 0; h < hops; h++) {
-			const options = adjacency[current].filter((n) => !visited.has(n));
+			const options = adjacency[current].filter(n => !visited.has(n));
 			if (!options.length) break;
 			const next = options[Math.floor(Math.random() * options.length)];
 			path.push(next);
@@ -331,7 +331,7 @@
 		if (idx !== undefined) edgeHeat[idx] = 1;
 	};
 
-	const draw = (time) => {
+	const draw = time => {
 		ctx.clearRect(0, 0, width, height);
 		if (staticLayer) ctx.drawImage(staticLayer, 0, 0, width, height);
 
@@ -349,7 +349,7 @@
 			ctx.stroke();
 		});
 
-		rings.forEach((ring) => {
+		rings.forEach(ring => {
 			ctx.beginPath();
 			ctx.arc(ring.x, ring.y, ring.r, 0, Math.PI * 2);
 			ctx.strokeStyle = `rgba(61, 220, 132, ${0.5 * (1 - ring.p)})`;
@@ -368,7 +368,7 @@
 			ctx.fill();
 		});
 
-		packets.forEach((packet) => {
+		packets.forEach(packet => {
 			const from = nodes[packet.path[packet.seg]];
 			const to = nodes[packet.path[packet.seg + 1]];
 			const [ax, ay] = toPx(from);
@@ -407,7 +407,7 @@
 	let lastTime = 0;
 	let spawnTimer = 400;
 
-	const tick = (time) => {
+	const tick = time => {
 		const dt = Math.min(time - lastTime || 16, 50);
 		lastTime = time;
 

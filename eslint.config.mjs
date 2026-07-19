@@ -12,6 +12,7 @@ export default [
 			},
 		},
 		rules: {
+			'arrow-parens': ['warn', 'as-needed'],
 			'arrow-spacing': ['warn', { before: true, after: true }],
 			'comma-dangle': ['warn', { arrays: 'always-multiline', objects: 'always-multiline' }],
 			'comma-spacing': 'warn',
