@@ -30,7 +30,6 @@ export default [
 			'no-else-return': 'warn',
 			'no-empty': 'warn',
 			'no-empty-function': 'warn',
-			'no-extra-parens': ['warn', 'all', { conditionalAssign: false, enforceForArrowConditionals: true, nestedBinaryExpressions: false, returnAssign: false }],
 			'no-floating-decimal': 'error',
 			'no-lonely-if': 'warn',
 			'no-multi-spaces': 'warn',
