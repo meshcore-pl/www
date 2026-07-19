@@ -41,7 +41,7 @@ const init = () => {
 
 	highlightCodeBlocks(content);
 
-	const targetFor = href => (href && href[0] === '#' && href.length > 1)
+	const targetFor = href => href && href[0] === '#' && href.length > 1
 		? content.querySelector(`#${CSS.escape(decodeURIComponent(href.slice(1)))}`)
 		: null;
 
