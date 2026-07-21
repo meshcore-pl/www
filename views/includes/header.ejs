@@ -48,18 +48,19 @@
 	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="/css/global.css">
-	<% if (locals.css) { (Array.isArray(css) ? css : [css]).forEach(c => { %><link rel="stylesheet" href="/css/<%= c %>.css" data-page-css><% }) } %>
+	<% if (locals.css) { (Array.isArray(css) ? css : [css]).forEach(c => { %><link rel="stylesheet" href="/css/<%= c %>.css"><% }) } %>
 
-	<!-- schema.org -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@graph": [
+	<% if (_basePath === '/' ) { %>
+		<!-- schema.org -->
+		<script type="application/ld+json">
 			{
-				"@type": "Organization",
-				"name": "MeshCore Polska",
-				"description": "Pierwsza ogólnopolska społeczność skupiona wokół sieci MeshCore, czyli komunikacji radiowej LoRa działającej bez internetu i GSM.",
-				"url": "<%= domain %>/",
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "Organization",
+                        "name": "MeshCore Polska",
+                        "description": "Pierwsza ogólnopolska społeczność skupiona wokół sieci MeshCore, czyli komunikacji radiowej LoRa działającej bez internetu i GSM.",
+                        "url": "<%= domain %>/",
 				"logo": "<%= domain %>/images/brand/logo-3-192.png",
 				"email": "contact@sefinek.net",
 				"sameAs": ["<%= domain %>/discord", "https://github.com/meshcore-pl"]
@@ -72,7 +73,8 @@
 			}
 		]
 	}
-	</script>
+		</script>
+	<% } %>
 </head>
 <body data-page="<%= locals.page || '' %>">
 <header class="nav">
