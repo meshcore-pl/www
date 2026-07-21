@@ -44,6 +44,11 @@ Najpierw zmień lokalizację i wyklucz pobliską elektronikę, a dopiero potem k
 1. [Goły filtr](https://pl.aliexpress.com/item/1005007438690164.html): tania opcja. Płytkę można dodatkowo zabezpieczyć np. kolejną warstwą termokurczu.
 2. [Filtr z obudową](https://pl.aliexpress.com/item/1005007509062592.html): zalecana opcja, jeśli budżet nie boli. NF raczej stosunkowo się nie poprawi względem pierwszej propozycji, aczkolwiek możliwe, że filtr w takiej wersji przetrwa znacznie dłużej.
 
-## Mam filtr, co dalej? Ważne!
-Przed wdrożeniem, koniecznie sprawdź jego maksymalną dopuszczalną moc wejściową. Jeśli wynosi ona 20 dBm (100 mW), ustaw moc nadawania na nie więcej niż 20 dBm.
-Przekroczenie tej wartości może uszkodzić filtr. Niestety coś kosztem czegoś.
+## Mam filtr, co dalej?
+Przed wdrożeniem koniecznie sprawdź jego maksymalną dopuszczalną moc wejściową. Jeśli wynosi ona 20 dBm (zwykle tyle one właśnie mają), ustaw moc nadawania na nie więcej niż 20 dBm (100 mW).
+Przekroczenie tej wartości może spowodować, że filtr:
+- zacznie się nagrzewać,
+- straci stabilną charakterystykę: pasmo może się przesunąć, a tłumienie wzrosnąć, zamiast poprawiać - zacznie pogarszać pracę urządzenia,
+- fizycznie się uszkodzi, a w skrajnych przypadkach może i nawet paść także nadajnik.
+
+Taki filtr to zawsze kompromis - zyskujesz na odbiorze, tracisz nieco na nadawaniu (straty wtrącone filtra). Coś kosztem czegoś. Niestety.

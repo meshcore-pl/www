@@ -1,11 +1,11 @@
 ---
-title: Lista anten
+title: Anteny
 description: Porównanie popularnych anten do modułów LoRa 868 MHz - zasięg, zysk, złącza.
 createdAt: 13.07.2026
-updatedAt: 18.07.2026
+updatedAt: 21.07.2026
 ---
 
-# Lista anten
+# Anteny
 Spis anten, których używamy lub używaliśmy. Polecamy te od GIZONT-a. Nie wierz w podany zysk.
 
 ## Pod companiony
@@ -25,9 +25,13 @@ Spis anten, których używamy lub używaliśmy. Polecamy te od GIZONT-a. Nie wie
 1. [AliExpress](https://pl.aliexpress.com/item/1005009684416243.html) - taka w zupełności wystarczy, można wybrać długość przewodu. Najlepiej przykleić ją od spodu puszki.
 2. [AliExpress](https://pl.aliexpress.com/item/1005008294463974.html) - plastikowa, w większości przypadków powinna być OK.
 
-## Zalecenia dotyczące przewodu antenowego
-Nigdy nie używaj `1.13 Cable` (one mają czarną izolacje). Więcej strat w TX niż pożytku. Używaj `RG178`.
-Jest jeszcze lepsza wersja, czyli `RG316`. Chińczycy nie produkują jednak takich kabli ze złączem `RF-1`, bo nie jest to standardowa konfiguracja.
+## Kierunkowość anteny
+Antena kierunkowa (np. Yagi) to nie wskaźnik laserowy.
+Niektóre osoby mogą myśleć, że kierunkowość oznacza wąski snop jak z lasera, a w praktyce bardziej przypomina to światło z latarki - szeroki stożek, który z odległością się rozszerza. Do tego antena promieniuje trochę też do tyłu.
+
+## Przewód antenowy
+Nigdy nie używaj `1.13 Cable` (one mają czarną izolację). Więcej strat w TX niż pożytku. Używaj `RG178`.
+Jest jeszcze lepsza wersja, czyli `RG316`. Chińczycy nie produkują jednak takich kabli ze złączem `RF-1`, bo nie jest to standard.
 Jeśli napiszesz do sprzedawcy na AliExpress, powinien zrobić Ci taki kabel na zamówienie.
 Uwaga: taki pigtail nie będzie zbyt elastyczny. W niektórych przypadkach złącze `RF-1` może samo odpiąć się od płytki. W każdym razie i tak zalecamy `RG178` - w większości przypadków nie ma sensu kombinować.
 Mimo wszystko, jeśli wybierzesz `RG316`, musisz być świadomy tego, co robisz.

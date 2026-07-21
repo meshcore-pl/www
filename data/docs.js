@@ -5,9 +5,9 @@ module.exports = [
 		title: 'Wszystko o MeshCore',
 		description: 'Sprzęt, anteny, komendy CLI, podstawy podstaw. Buduj zdecentralizowane sieci mesh i wysyłaj wiadomości drogą radiową. Bez internetu, bez zasięgu komórkowego. Dokumentacja nadal w trakcie prac.',
 		pages: [
-			{ slug: 'wprowadzenie', title: 'Pojęcia i duty cycle' },
-			{ slug: 'noise-floor', title: 'Noise Floor' },
-			{ slug: 'anteny', title: 'Lista anten' },
+			{ slug: 'wprowadzenie', title: 'Wprowadzenie' },
+			{ slug: 'noise-floor', title: 'Noise Floor (NF)' },
+			{ slug: 'anteny', title: 'Anteny' },
 			{ slug: 'lista-analizatorow', title: 'Lista analizatorów' },
 		],
 	},

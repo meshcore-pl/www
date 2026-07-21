@@ -1,11 +1,16 @@
 ---
-title: Podstawowe pojęcia, legalność i duty cycle
+title: Wprowadzenie
 description: Słownik pojęć MeshCore (preset, SF, CR, advert) oraz zasady legalnego nadawania w paśmie 868-869 MHz - limity mocy ERP, duty cycle 10% i konfiguracja CLI.
 createdAt: 13.07.2026
 updatedAt: 21.07.2026
 ---
 
-# Podstawowe pojęcia, legalność i duty cycle
+# Wprowadzenie
+Dziękujemy za zainteresowanie tematem! Pamiętaj, że dokumentacja jest nadal w trakcie prac. Sama domena `meshcorepolska.org` nie ma jeszcze nawet dwóch miesięcy.
+Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [GitHubie](https://github.com/meshcore-pl/website).
+Zapraszamy was wszystkich na [naszą grupę na Discordzie](https://meshcorepolska.org/discord).
+
+## Pojęcia, legalność i duty cycle
 Niektóre z nich zostały ustalone przez naszą społeczność. W kolumnie `Pojęcie` słowa pokrywają się z naszym oficjalnym tłumaczeniem w aplikacji MeshCore. Nie znajdziesz więc tutaj żadnej rozbieżności ani nie pomylisz się przy czymkolwiek.
 
 | Pojęcie                        | Ang. tł.         | Co oznacza?                                                                                                                                                 |
@@ -22,6 +27,7 @@ Niektóre z nich zostały ustalone przez naszą społeczność. W kolumnie `Poj�
 | Advert do wszystkich           | Flood Routed     | Advert rozsyłany przez sieć i przekazywany dalej przez repeatery. Dzięki temu może dotrzeć również do urządzeń poza bezpośrednim zasięgiem.                 |
 | Antena dookólna (360)          |                  | Antena nadająca i odbierająca sygnał we wszystkich kierunkach wokół siebie.                                                                                 |
 | Antena kierunkowa              |                  | Antena skupiająca sygnał w wybranym kierunku. Wymaga odpowiedniego ustawienia. Zwykle może zapewnić większy zasięg w tym kierunku.                          |
+
 
 ## Legalność i duty cycle
 `869.40-869.65 MHz` jest pasmem bezlicencyjnym (SRD: Short Range Device), a nie amatorskim. Nie potrzebujesz więc licencji krótkofalarskiej, żeby korzystać z MeshCore (869.618 MHz).
