@@ -5,11 +5,6 @@ createdAt: 13.07.2026
 updatedAt: 18.07.2026
 ---
 
-W trakcie budowy.
-
----
-
-
 # Lista anten
 Spis anten, których używamy lub używaliśmy. Polecamy te od GIZONT-a. Nie wierz w podany zysk.
 
@@ -38,4 +33,4 @@ Uwaga: taki pigtail nie będzie zbyt elastyczny. W niektórych przypadkach złą
 Mimo wszystko, jeśli wybierzesz `RG316`, musisz być świadomy tego, co robisz.
 
 ## Filtry BPF
-Używaj ich wyłącznie wtedy, gdy masz bardzo wysoki NF. Więcej informacji na ich temat znajdziesz [tutaj](https://meshcorepolska.org/dokumentacja/meshcore/wprowadzenie#noise-floor---czym-jest).
+Używaj ich wyłącznie wtedy, gdy masz bardzo wysoki NF. Więcej informacji na ich temat znajdziesz [tutaj](https://meshcorepolska.org/dokumentacja/meshcore/noise-floor#noise-floor---czym-jest).

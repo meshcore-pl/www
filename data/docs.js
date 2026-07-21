@@ -5,9 +5,9 @@ module.exports = [
 		title: 'Wszystko o MeshCore',
 		description: 'Sprzęt, anteny, komendy CLI, podstawy podstaw. Buduj zdecentralizowane sieci mesh i wysyłaj wiadomości drogą radiową. Bez internetu, bez zasięgu komórkowego. Dokumentacja nadal w trakcie prac.',
 		pages: [
-			{ slug: 'wprowadzenie', title: 'Wprowadzenie' },
+			{ slug: 'wprowadzenie', title: 'Podstawowe pojęcia i skróty' },
 			{ slug: 'noise-floor', title: 'Noise Floor' },
-			{ slug: 'anteny', title: 'Spis anten' },
+			{ slug: 'anteny', title: 'Lista anten' },
 			{ slug: 'lista-analizatorow', title: 'Lista analizatorów' },
 		],
 	},
@@ -17,7 +17,7 @@ module.exports = [
 		title: 'Serwer Discord',
 		description: 'Dokumentacja głównego serwera MeshCore Polska - miejsca, w którym społeczność dzieli się wiedzą, pomaga w konfiguracji sprzętu i wspólnie rozwija sieć.',
 		pages: [
-			{ slug: 'wprowadzenie', title: 'Wprowadzenie' },
+			{ slug: 'wprowadzenie', title: 'Wprowadzenie do społeczności' },
 			{ slug: 'regulamin', title: 'Regulamin serwera' },
 			{ slug: 'nasze-logo', title: 'Nasze logo' },
 		],

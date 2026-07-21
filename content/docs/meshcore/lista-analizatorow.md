@@ -2,7 +2,10 @@
 title: Spis analizatorów regionalnych i pozostałych
 description: Lista publicznych analizatorów sieci MeshCore w Polsce i Europie. Znajdź globalne, regionalne i zagraniczne instancje CoreScope do monitorowania sieci.
 createdAt: 17.07.2026
+updatedAt: 21.07.2026
 ---
+
+# Spis analizatorów regionalnych i pozostałych
 
 ## Globalne
 -  <a href="https://analyzer.marwoj.net" target="_blank" rel="noopener nofollow">analyzer.marwoj.net</a>

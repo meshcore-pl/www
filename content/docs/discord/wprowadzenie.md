@@ -1,10 +1,11 @@
 ---
-title: Wprowadzenie
-description: Informacje o roli administracji, serwerze MeshCore Polska oraz odpowiedzialności użytkowników.
+title: Wprowadzenie do społeczności
+description: Zasady działania społeczności MeshCore Polska na Discordzie - rola administracji, wyłączenie odpowiedzialności oraz kwestie prawne.
 createdAt: 12.07.2026
+updatedAt: 21.07.2026
 ---
 
-# Wprowadzenie
+# Wprowadzenie do społeczności
 Witajcie! MeshCore Polska to społecznościowy serwer Discord poświęcony tematyce MeshCore/Meshtastic, radia, anten, elektroniki, krótkofalarstwa, a także informatyki/programowania.
 
 ## Nieoficjalny charakter serwera

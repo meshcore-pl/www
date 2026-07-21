@@ -1,11 +1,11 @@
 ---
-title: Wprowadzenie
-description: Czym jest Noise Floor w MeshCore, jak znaleźć źródło zakłóceń i kiedy zastosować filtr.
+title: Podstawowe pojęcia i skróty
+description: Słownik podstawowych pojęć i skrótów MeshCore - preset, SF, CR, companion, repeater, room server oraz advert.
 createdAt: 13.07.2026
-updatedAt: 18.07.2026
+updatedAt: 21.07.2026
 ---
 
-## Podstawowe pojęcia i skróty
+# Podstawowe pojęcia i skróty
 Niektóre z nich zostały ustalone przez naszą społeczność. W kolumnie `Pojęcie` słowa pokrywają się z naszym oficjalnym tłumaczeniem w aplikacji MeshCore. Nie znajdziesz więc tutaj żadnej rozbieżności ani nie pomylisz się przy czymkolwiek.
 
 | Pojęcie                        | Ang. tł.         | Co oznacza?                                                                                                                                                 |
