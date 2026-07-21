@@ -27,7 +27,8 @@ Spis anten, których używamy lub używaliśmy. Polecamy te od GIZONT-a. Nie wie
 
 ## Kierunkowość anteny
 Antena kierunkowa (np. Yagi) to nie wskaźnik laserowy.
-Niektóre osoby mogą myśleć, że kierunkowość oznacza wąski snop jak z lasera, a w praktyce bardziej przypomina to światło z latarki - szeroki stożek, który z odległością się rozszerza. Do tego antena promieniuje trochę też do tyłu.
+Niektóre osoby mogą myśleć, że kierunkowość oznacza wąski snop jak z lasera, a w praktyce bardziej przypomina to światło z latarki - szeroki stożek, który z odległością się rozszerza.
+Do tego antena promieniuje też trochę do tyłu.
 
 ## Przewód antenowy
 Nigdy nie używaj `1.13 Cable` (one mają czarną izolację). Więcej strat w TX niż pożytku. Używaj `RG178`.
