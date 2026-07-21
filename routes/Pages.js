@@ -1,9 +1,7 @@
 const router = require('express').Router();
 const { version } = require('../package.json');
 
-const discordInviteUrl = `https://discord.com/invite/${process.env.DISCORD_INVITE_CODE}`; // Specjalnie discord.com/invite zamiast discord.gg żeby uniknąć wielu przekierowań
-
 router.get('/', (req, res) => res.render('index.ejs', { version }));
-router.get('/discord', (req, res) => res.redirect(discordInviteUrl));
+router.get('/discord', (req, res) => res.redirect(req.app.locals.discordInvite));
 
 module.exports = router;

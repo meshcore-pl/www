@@ -1,6 +1,6 @@
 ---
 title: Regulamin serwera
-description: Regulamin obowiązujący na serwerze Discord MeshCore Polska.
+description: Regulamin obowiązujący na serwerze Discord MeshCore Polska - zasady kultury, treści zakazane oraz konsekwencje ich łamania.
 createdAt: 12.07.2026
 updatedAt: 21.07.2026
 ---

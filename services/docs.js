@@ -26,7 +26,7 @@ for (const group of groups) {
 		const { data, content } = parseFrontmatter(raw);
 		const tokens = marked.lexer(content);
 		const toc = tokens
-			.filter(t => t.type === 'heading' && (t.depth === 2 || t.depth === 3))
+			.filter(t => t.type === 'heading' && t.depth >= 1 && t.depth <= 3)
 			.map(t => ({ id: slugify(t.text), text: t.text, level: t.depth }));
 
 		pages.set(`${group.slug}/${p.slug}`, {

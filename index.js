@@ -22,6 +22,7 @@ const app = express();
 if (isProd) app.set('trust proxy', 1);
 app.set('view engine', 'ejs');
 app.locals.domain = DOMAIN;
+app.locals.discordInvite = `https://discord.com/invite/${process.env.DISCORD_INVITE_CODE}`;
 
 // Use middlewares
 app.use(helmet({ crossOriginResourcePolicy: false, contentSecurityPolicy: false }));

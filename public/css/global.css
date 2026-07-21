@@ -1,7 +1,7 @@
 :root {
 	--bg: #0a0c11;
 	--bg-alt: #0e1118;
-	--card: #12151e;
+	--card: #10131b;
 	--border: rgba(148, 166, 204, 0.12);
 	--border-strong: rgba(148, 166, 204, 0.24);
 	--text: #eef1f8;
@@ -70,13 +70,16 @@ img {
 a {
 	color: #58a6ff;
 	text-decoration: none;
+	transition: color 0.15s ease;
 }
 
 a:hover {
+	color: #7fbbff;
 	text-decoration: underline;
 }
 
 a:active {
+	color: #3d8fe0;
 	text-decoration: none;
 }
 
@@ -407,7 +410,7 @@ p {
 .footer {
 	background: var(--bg-alt);
 	border-top: 1px solid rgba(238, 241, 248, 0.08);
-	padding: 48px 24px 32px;
+	padding: 36px 24px 32px;
 }
 
 .footer__inner {

@@ -576,6 +576,39 @@ a[data-lightbox] {
 	backdrop-filter: blur(6px) saturate(0.9);
 }
 
+.section--photo {
+	position: relative;
+	background: url('/images/photos/zachod-nad-miasteczkiem.jpg') center / cover no-repeat fixed, var(--bg);
+}
+
+@supports (-webkit-touch-callout: none) {
+	.section--photo {
+		background-attachment: scroll;
+	}
+}
+
+.section--photo::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(ellipse 60% 60% at 50% 0%, rgba(224, 18, 48, 0.14), transparent 65%),
+		linear-gradient(180deg, rgba(10, 12, 17, 0.32) 0%, rgba(10, 12, 17, 0.4) 100%);
+}
+
+.section--photo .section__inner {
+	position: relative;
+	text-shadow: 0 0 6px #000;
+}
+
+.section--photo .card {
+	background: rgba(18, 21, 30, 0.55);
+	padding: 24px;
+	box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+}
+
 @media (max-width: 880px) {
 	.hero {
 		padding: calc(52px + var(--nav-h)) 20px 52px;

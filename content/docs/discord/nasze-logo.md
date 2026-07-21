@@ -1,6 +1,6 @@
 ---
 title: Nasze logo
-description: Loga i bannery serwera Discord MeshCore Polska.
+description: Loga i bannery serwera Discord MeshCore Polska do pobrania i swobodnego użycia w Twoich materiałach i publikacjach.
 createdAt: 12.07.2026
 updatedAt: 18.07.2026
 ---

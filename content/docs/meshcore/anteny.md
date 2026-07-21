@@ -1,6 +1,6 @@
 ---
 title: Anteny
-description: Porównanie popularnych anten do modułów LoRa 868 MHz - zasięg, zysk, złącza.
+description: Porównanie popularnych anten do modułów LoRa 868 MHz pod companiony, repeatery i Bluetooth - zysk, zasięg i przewody.
 createdAt: 13.07.2026
 updatedAt: 21.07.2026
 ---

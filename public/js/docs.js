@@ -45,7 +45,7 @@ const init = () => {
 		? content.querySelector(`#${CSS.escape(decodeURIComponent(href.slice(1)))}`)
 		: null;
 
-	const headings = [...content.querySelectorAll('h2[id], h3[id]')];
+	const headings = [...content.querySelectorAll('h1[id], h2[id], h3[id]')];
 	const tocLinks = [...document.querySelectorAll('.docs-toc a, .docs-sidebar__toc a')];
 
 	const setActive = id => {

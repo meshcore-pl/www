@@ -3,7 +3,7 @@ module.exports = [
 		slug: 'meshcore',
 		icon: '/images/meshcore/main-512.png',
 		title: 'Wszystko o MeshCore',
-		description: 'Sprzęt, anteny, komendy CLI, podstawy podstaw. Buduj zdecentralizowane sieci mesh i wysyłaj wiadomości drogą radiową. Bez internetu, bez zasięgu komórkowego. Dokumentacja nadal w trakcie prac.',
+		description: 'Sprzęt, anteny i komendy CLI. Buduj sieć mesh i wysyłaj wiadomości drogą radiową - bez internetu i zasięgu komórkowego. Dokumentacja w trakcie prac.',
 		pages: [
 			{ slug: 'wprowadzenie', title: 'Wprowadzenie' },
 			{ slug: 'noise-floor', title: 'Noise Floor (NF)' },

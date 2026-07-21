@@ -10,9 +10,24 @@
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://meshcorepolska.org/discord</loc>
-        <lastmod>2026-07-15T07:24:10Z</lastmod>
-        <priority>0.85</priority>
+        <loc>https://meshcorepolska.org/dokumentacja/meshcore</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://meshcorepolska.org/dokumentacja/meshcore/wprowadzenie</loc>
+        <priority>0.50</priority>
+    </url>
+    <url>
+        <loc>https://meshcorepolska.org/dokumentacja/meshcore/noise-floor</loc>
+        <priority>0.50</priority>
+    </url>
+    <url>
+        <loc>https://meshcorepolska.org/dokumentacja/meshcore/anteny</loc>
+        <priority>0.50</priority>
+    </url>
+    <url>
+        <loc>https://meshcorepolska.org/dokumentacja/meshcore/lista-analizatorow</loc>
+        <priority>0.50</priority>
     </url>
     <url>
         <loc>https://meshcorepolska.org/dokumentacja/discord</loc>
@@ -23,7 +38,7 @@
         <priority>0.44</priority>
     </url>
     <url>
-        <loc>https://meshcorepolska.org/dokumentacja/discord/grafiki-serwera</loc>
+        <loc>https://meshcorepolska.org/dokumentacja/discord/nasze-logo</loc>
         <priority>0.44</priority>
     </url>
     <url>
