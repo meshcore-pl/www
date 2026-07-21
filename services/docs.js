@@ -33,6 +33,8 @@ for (const group of groups) {
 			slug: p.slug,
 			title: data.title || p.title,
 			description: data.description || '',
+			createdAt: data.createdAt || null,
+			updatedAt: data.updatedAt || null,
 			html: marked.parser(tokens, { renderer }),
 			toc,
 			group,

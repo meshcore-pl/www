@@ -1,6 +1,8 @@
 ---
 title: Lista anten
 description: Porównanie popularnych anten do modułów LoRa 868 MHz - zasięg, zysk, złącza.
+createdAt: 13.07.2026
+updatedAt: 18.07.2026
 ---
 
 W trakcie budowy.

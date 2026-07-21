@@ -41,26 +41,35 @@
 	<article class="docs-content" id="docs-content">
 		<%- page.html %>
 
-		<nav class="docs-pagination" aria-label="Nawigacja stron">
-			<%
-			const idx = group.pages.findIndex(p => p.slug === page.slug);
-			const prev = idx > 0 ? group.pages[idx - 1] : null;
-			const next = idx < group.pages.length - 1 ? group.pages[idx + 1] : null;
-			%>
-			<% if (prev) { %>
-			<a href="/dokumentacja/<%= group.slug %>/<%= prev.slug %>" class="docs-pagination__link docs-pagination__link--prev">
-				<span>&larr; Poprzednia</span>
-				<strong><%= prev.title %></strong>
-			</a>
-			<% } else { %><span></span><% } %>
+		<div class="docs-footer">
+			<nav class="docs-pagination" aria-label="Nawigacja stron">
+				<%
+				const idx = group.pages.findIndex(p => p.slug === page.slug);
+				const prev = idx > 0 ? group.pages[idx - 1] : null;
+				const next = idx < group.pages.length - 1 ? group.pages[idx + 1] : null;
+				%>
+				<% if (prev) { %>
+				<a href="/dokumentacja/<%= group.slug %>/<%= prev.slug %>" class="docs-pagination__link docs-pagination__link--prev">
+					<span>&larr; Poprzednia</span>
+					<strong><%= prev.title %></strong>
+				</a>
+				<% } else { %><span></span><% } %>
 
-			<% if (next) { %>
-			<a href="/dokumentacja/<%= group.slug %>/<%= next.slug %>" class="docs-pagination__link docs-pagination__link--next">
-				<span>Następna &rarr;</span>
-				<strong><%= next.title %></strong>
-			</a>
-			<% } else { %><span></span><% } %>
-		</nav>
+				<% if (next) { %>
+				<a href="/dokumentacja/<%= group.slug %>/<%= next.slug %>" class="docs-pagination__link docs-pagination__link--next">
+					<span>Następna &rarr;</span>
+					<strong><%= next.title %></strong>
+				</a>
+				<% } else { %><span></span><% } %>
+			</nav>
+
+			<% if (page.createdAt || page.updatedAt) { %>
+			<div class="docs-meta">
+				<span><% if (page.createdAt) { %>Utworzono: <%= page.createdAt %><% } %></span>
+				<span><% if (page.updatedAt) { %>Ostatnia aktualizacja: <%= page.updatedAt %><% } %></span>
+			</div>
+			<% } %>
+		</div>
 	</article>
 
 	<% if (page.toc.length) { %>

@@ -1,6 +1,7 @@
 ---
 title: Wprowadzenie
 description: Informacje o roli administracji, serwerze MeshCore Polska oraz odpowiedzialności użytkowników.
+createdAt: 12.07.2026
 ---
 
 # Wprowadzenie

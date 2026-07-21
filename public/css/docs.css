@@ -520,13 +520,25 @@ img.docs-nav-group__icon {
 	margin: 2.5rem 0;
 }
 
+.docs-footer {
+	margin-top: 3.5rem;
+	padding-top: 1.75rem;
+	border-top: 1px solid var(--border);
+}
+
+.docs-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1.25rem 0 0;
+	font-size: 0.85rem;
+	color: var(--text-muted);
+}
+
 .docs-pagination {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 1rem;
-	margin-top: 3.5rem;
-	padding-top: 1.75rem;
-	border-top: 1px solid var(--border);
 }
 
 .docs-pagination__link {
