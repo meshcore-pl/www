@@ -50,6 +50,7 @@ Dogadujcie szczegóły jasno i rozsądnie, najlepiej zanim ktokolwiek wyśle pie
 ## 9. Prawo radiowe i konfiguracja
 Za zgodność swoich urządzeń, ustawień i sposobu nadawania z obowiązującym prawem odpowiadasz sam. Dotyczy to między innymi częstotliwości, mocy nadawania oraz konfiguracji urządzeń.
 Pamiętaj, że w internecie nic nie ginie, więc nie pisz publicznie rzeczy, których konsekwencji nie jesteś świadomy.
+[Tutaj](https://meshcorepolska.org/dokumentacja/meshcore/wprowadzenie#legalnosc-i-duty-cycle) znajdziesz więcej informacji na temat prawa.
 
 ## 10. Prywatność i lokalizacje RPT
 Szanujmy swoją prywatność nawzajem. Lokalizacjami repeaterów możesz wymieniać się bezpośrednio z innymi, ale nie publikuj dokładnych adresów ani pozycji z dokładnością do konkretnego mieszkania, domu czy posesji.

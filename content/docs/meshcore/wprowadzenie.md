@@ -10,6 +10,8 @@ Dziękujemy za zainteresowanie tematem! Pamiętaj, że dokumentacja jest nadal w
 Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [GitHubie](https://github.com/meshcore-pl/website).
 Zapraszamy was wszystkich na [naszą grupę na Discordzie](https://meshcorepolska.org/discord).
 
+**OSTRZEŻENIE: NIGDY NIE USTAWIAJ DOKŁADNEJ LOKALIZACJI SWOJEGO REPEATERA NA MAPIE!**
+
 ## Pojęcia, legalność i duty cycle
 Niektóre z nich zostały ustalone przez naszą społeczność. W kolumnie `Pojęcie` słowa pokrywają się z naszym oficjalnym tłumaczeniem w aplikacji MeshCore. Nie znajdziesz więc tutaj żadnej rozbieżności ani nie pomylisz się przy czymkolwiek.
 
