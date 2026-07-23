@@ -53,26 +53,26 @@
 	<% if (_basePath === '/' ) { %>
 		<!-- schema.org -->
 		<script type="application/ld+json">
-			{
-                "@context": "https://schema.org",
-                "@graph": [
-                    {
-                        "@type": "Organization",
-                        "name": "MeshCore Polska",
-                        "description": "Pierwsza ogólnopolska społeczność skupiona wokół sieci MeshCore, czyli komunikacji radiowej LoRa działającej bez internetu i GSM.",
-                        "url": "<%= domain %>/",
-				"logo": "<%= domain %>/images/brand/logo-3-192.png",
-				"email": "contact@sefinek.net",
-				"sameAs": ["<%= domain %>/discord", "https://github.com/meshcore-pl"]
-			},
-			{
-				"@type": "WebSite",
-				"name": "MeshCore Polska",
-				"url": "<%= domain %>/",
-				"inLanguage": "pl-PL"
-			}
-		]
-	}
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Organization",
+					"name": "MeshCore Polska",
+					"description": "Pierwsza ogólnopolska społeczność skupiona wokół sieci MeshCore, czyli komunikacji radiowej LoRa działającej bez internetu i GSM.",
+					"url": "<%= domain %>/",
+					"logo": "<%= domain %>/images/brand/logo-3-192.png",
+					"email": "contact@sefinek.net",
+					"sameAs": ["<%= domain %>/discord", "https://github.com/meshcore-pl"]
+				},
+				{
+					"@type": "WebSite",
+					"name": "MeshCore Polska",
+					"url": "<%= domain %>/",
+					"inLanguage": "pl-PL"
+				}
+			]
+		}
 		</script>
 	<% } %>
 </head>
