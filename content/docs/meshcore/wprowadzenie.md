@@ -2,7 +2,7 @@
 title: Wprowadzenie
 description: Słownik pojęć MeshCore (preset, SF, CR, advert) oraz zasady legalnego nadawania w paśmie 868-869 MHz - limity mocy ERP, duty cycle 10% i konfiguracja CLI.
 createdAt: 13.07.2026
-updatedAt: 21.07.2026
+updatedAt: 23.07.2026
 ---
 
 # Wprowadzenie
@@ -12,8 +12,8 @@ Zapraszamy was wszystkich na [naszą grupę na Discordzie](https://meshcorepolsk
 
 **OSTRZEŻENIE: NIGDY NIE USTAWIAJ DOKŁADNEJ LOKALIZACJI SWOJEGO REPEATERA NA MAPIE!**
 
-## Pojęcia, legalność i duty cycle
-Niektóre z nich zostały ustalone przez naszą społeczność. W kolumnie `Pojęcie` słowa pokrywają się z naszym oficjalnym tłumaczeniem w aplikacji MeshCore.
+## Podstawowe pojęcia
+Niektóre polskie określenia zostały przyjęte przez naszą społeczność. Nazwy w kolumnie Pojęcie są zgodne z tłumaczeniem używanym w polskiej wersji aplikacji MeshCore.
 Nie znajdziesz więc tutaj żadnej rozbieżności ani nie pomylisz się przy czymkolwiek.
 
 | Pojęcie                        | Ang. tł.         | Co oznacza?                                                                                                                                                 |
@@ -33,7 +33,7 @@ Nie znajdziesz więc tutaj żadnej rozbieżności ani nie pomylisz się przy czy
 
 
 ## Legalność i duty cycle
-`869.40-869.65 MHz` jest pasmem bezlicencyjnym (SRD: Short Range Device), a nie amatorskim. Nie potrzebujesz więc licencji krótkofalarskiej, żeby korzystać z MeshCore (869.618 MHz).
+`869,40-869,65 MHz` jest pasmem bezlicencyjnym (SRD: Short Range Device), a nie amatorskim. Nie potrzebujesz więc licencji krótkofalarskiej, żeby korzystać z MeshCore (869.618 MHz).
 
 - Limit mocy to `500 mW ERP` (27 dBm)
 - Limit duty cycle to **10%** (maksymalnie około 6 minut nadawania na godzinę)
@@ -44,7 +44,7 @@ set dutycycle 10
 ```
 
 ### Czy 10% duty cycle nie ogranicza za bardzo sieci?
-Do komunikacji tekstowej w zupełności to wystarczy. Realny czas nadawania pojedynczego pakietu to zwykle od kilkuset milisekund do 1.6 sekundy (zależnie od długości wiadomości).
+Do komunikacji tekstowej w zupełności to wystarczy. Realny czas nadawania pojedynczego pakietu to zwykle od kilkuset milisekund do 1,6 sekundy (zależnie od długości wiadomości).
 Poniżej znajdziesz zmierzone wartości na naszym presecie:
 
 | Pakiet                                                    | Companion | Repeater (+1 hop) |
@@ -55,8 +55,9 @@ Poniżej znajdziesz zmierzone wartości na naszym presecie:
 | Wiadomość z pangramem „The quick brown fox...” (43 znaki) | 800 ms    | 817 ms            |
 | Wiadomość Lorem ipsum (135 znaków, limit)                 | 1583 ms   | 1600 ms           |
 
-Nawet najdłuższy z tych pakietów (1,6 s) zmieściłby się ~225 razy w budżecie 6 minut na godzinę, wysyłany bez przerwy.
-Każdy hop przez repeater dokłada stały narzut - w tych pomiarach około 16-17 ms, niezależnie od długości wiadomości. Powyższe pomiary pochodzą z [nagrania SDR](https://www.youtube.com/watch?v=mbBEsTQGjNI).
+Nawet najdłuższy z tych pakietów, trwający około 1,6 sekundy, zmieściłby się teoretycznie około 225 razy w budżecie 6 minut nadawania na godzinę.
+Należy jednak pamiętać, że każdy repeater nadaje cały pakiet ponownie. Wartość 16-17 ms widoczna w pomiarach oznacza jedynie wzrost długości retransmitowanego pakietu, wynikający między innymi z dodania informacji o trasie.
+Powyższe wartości pochodzą z [nagrania SDR](https://www.youtube.com/watch?v=mbBEsTQGjNI).
 
 W typowej sieci większym ograniczeniem niż sam limit duty cycle może być skalowalność.
 Repeater przekazuje nie tylko wiadomości, ale również pakiety rozgłoszeniowe (flood routed), które odbiera od urządzeń znajdujących się w jego zasięgu.
