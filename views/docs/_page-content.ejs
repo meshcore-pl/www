@@ -58,14 +58,14 @@
 				%>
 				<% if (prev) { %>
 				<a href="/dokumentacja/<%= group.slug %>/<%= prev.slug %>" class="docs-pagination__link docs-pagination__link--prev">
-					<span>&larr; Poprzednia</span>
+					<span>&larr; Poprzednia strona</span>
 					<strong><%= prev.title %></strong>
 				</a>
 				<% } else { %><span></span><% } %>
 
 				<% if (next) { %>
 				<a href="/dokumentacja/<%= group.slug %>/<%= next.slug %>" class="docs-pagination__link docs-pagination__link--next">
-					<span>Następna &rarr;</span>
+					<span>Następny dokument &rarr;</span>
 					<strong><%= next.title %></strong>
 				</a>
 				<% } else { %><span></span><% } %>
